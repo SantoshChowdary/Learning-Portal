@@ -1,0 +1,86 @@
+.sign-in-section{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(249, 251, 254);
+}
+.sign-in-section-1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70%;
+}
+.nxtwave-logo{
+    max-width: 90px;
+    max-height: 75px;
+    margin-top: 70px;
+}
+.sign-in-section-2{
+    height: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.sign-in-form-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid rgb(215, 223, 233);
+    background-color: rgb(255, 255, 255);
+    padding: 50px;
+    max-height: 280px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 2px 2px rgb(211, 211, 225);
+}
+@media screen and (min-width: 576px) {
+    .sign-in-form-section {
+        width: 380px;
+    }
+}
+.login-heading{
+    font-family: "HKGrotesk";
+    font-weight: normal;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: rgb(23, 31, 70);
+}
+.input-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 30px 0;    
+    width: 100%
+}
+.input-div label {
+    font-weight: 300;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+#phoneNumber{
+    margin: 7px 0 20px 0;
+    outline: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(171, 170, 170);
+}
+#phoneNumber:focus{
+    box-shadow: 0px 0px 2px 2px rgba(59,130,246,0.5);
+}
+
+.get-otp-button{
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    margin-top: 20px;
+    color: white;
+    font-weight: 500;
+    background-color: rgb(72, 72, 185);
+    cursor: pointer;
+}
+.get-otp-button:disabled{
+    background-color: #CBD5E1;
+    color: rgb(84, 84, 84);
+    cursor: not-allowed;
+}
