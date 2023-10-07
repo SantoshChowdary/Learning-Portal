@@ -1,0 +1,17 @@
+.my-journey-main-section{
+    display: flex;
+}
+.my-journey-section{
+    background-color: rgb(226, 238, 245);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius:  25px;
+    margin-left: calc(256px - 100vw);
+    width: calc(100vw - 256px);
+    padding : 40px 60px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+}
+.my-journey-gcs{
+    margin: 30px 20px;
+}

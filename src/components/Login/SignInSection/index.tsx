@@ -1,38 +1,46 @@
 import React, { useState } from 'react';
+import {useHistory, Redirect} from 'react-router-dom'
+import {supabase} from '../../../supabase/supabase'
+import Loader from '../../loader/loader';
+import { useDispatch, useSelector } from 'react-redux';
+import { updateUserLoggedStatus, addUserToDB } from '../../../store/slices/userSlice';
 import './main.css';
+import { PhoneNumberValidator } from '../../../utilities/phoneNumberValidator';
 
-function SignIn() {
-  const [phoneNumber, setPhoneNumber] = useState('');
 
-  const handlePhoneNumberChange = (e : React.ChangeEvent<HTMLInputElement>) => {
-    setPhoneNumber(e.target.value)
-  };
+const SignIn = (props: any) => {
+  const [phoneNumber, setPhoneNumber] = useState("9866021291");
+  const [password, setPassword] = useState("santosh")
+  const [isLoading, setLoadingStatus] = useState(false)
+  const history = useHistory()
+  const dispatch = useDispatch()
+  const isUserAuthenticated = useSelector((state:any) => state.user.isUserLoggedIn) 
 
-  const key = process.env.REACT_APP_API_KEY
-  console.log(key)
-  
-  const checkValidPhoneNumber = (number = "" ) : boolean => {
-    if ( typeof(number) === "string" &&  number.length === 10){
-        const firstDigit = parseInt(number[0]);
-        if ( firstDigit >= 5 && firstDigit<=9){
-            for (let i=1; i<number.length; i++){
-                const char = number.charAt(i);
-                if (isNaN(parseInt(char))){
-                    return false
-                }
+  const handlePassword = async (e : React.ChangeEvent<HTMLFormElement>) => {
+        setLoadingStatus(true)
+        e.preventDefault()
+        const apiCall = await supabase.from('user_authentication').select().eq('mobile_number', phoneNumber).eq("password", password)
+        const checkValidUserInDB = await supabase.from('user_authentication').select().eq('mobile_number', phoneNumber)
+        console.log(checkValidUserInDB)
+        if ( apiCall.status === 200 ){
+            setLoadingStatus(false)
+            if (apiCall.data?.length === 0 && checkValidUserInDB.data?.length === 0){
+                history.push("/signup")
+            } else if (apiCall.data?.length === 0 && checkValidUserInDB.data?.length !== 0){
+                alert("Invalid Password")
+            } else if (apiCall.data?.length !== 0 && checkValidUserInDB.data?.length !== 0){
+                dispatch(updateUserLoggedStatus(true))
+                dispatch(addUserToDB(apiCall.data))
+                console.log(apiCall.data)
+                history.replace("/")
             }
-            return true
         }
-    }
 
-
-    return false
-  }
-  let isValidPhoneNumber = checkValidPhoneNumber(phoneNumber);
-
-  const handlePassword = () => {
-    
   };
+
+  if (isUserAuthenticated){
+    return <Redirect to="/" />
+  }
 
   return (
     <div className="sign-in-section">
@@ -41,7 +49,7 @@ function SignIn() {
                 <img src="https://nxtwave.imgix.net//logos/Nxtwave_90_48.png" alt="nxtwave-logo" className="nxtwave-logo" />
             </div>
             <div className="sign-in-section-2">
-                <form className="sign-in-form-section">
+                <form className="sign-in-form-section" onSubmit={handlePassword}>
                     <p className="login-heading">Login / Sign Up</p>
                     <div className='input-div'>
                         <label htmlFor="phoneNumber">Please enter a valid mobile number</label>
@@ -51,16 +59,24 @@ function SignIn() {
                             name="phoneNumber"
                             autoComplete='off'
                             value={phoneNumber}
-                            onChange={handlePhoneNumberChange}
-                            // onBlur={()=>alert("npd")}
+                            onChange={e => setPhoneNumber(e.target.value)}
+                        />
+
+                        <label htmlFor="UserPassword">Your password</label>
+                        <input
+                            type="tel"
+                            id="UserPassword"
+                            name="password"
+                            autoComplete='off'
+                            value={password}
+                            onChange={e => setPassword(e.target.value)}
                         />
                         <button
-                            type="button"
+                            type="submit"
                             className="get-otp-button"
-                            onClick={handlePassword}
-                            disabled={phoneNumber.length !== 10 || !isValidPhoneNumber}
+                            disabled={ (PhoneNumberValidator(phoneNumber)) && (password.length>0) ? undefined : true }
                         >
-                            Continue
+                            {isLoading ? <Loader /> : "Continue"}
                         </button>
                     </div>
                 </form>

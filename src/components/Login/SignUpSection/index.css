@@ -1,0 +1,96 @@
+.sign-up-section-1{
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+    /* align-items: center; */
+}
+.sign-up-form-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 1px solid rgb(215, 223, 233);
+    background-color: rgb(255, 255, 255);
+    padding: 30px 50px;
+    margin-top: auto;
+    min-height: 250px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 2px 2px rgb(211, 211, 225);
+}
+.sign-up-back-button{
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    cursor: pointer;
+    margin-top: 5px
+}
+.sign-up-heading{
+    font-family: "HKGrotesk";
+    font-size: 25px;
+    font-weight: 400;
+    color: rgb(58, 77, 168);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.number-display{
+    font-family: "HKGrotesk";
+    line-height: 1.5;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(126, 133, 142);
+    margin: 5px 0;
+}
+.number-display span{
+    color: rgb(82, 96, 109);
+}
+
+.password-label {
+    font-weight: 300;
+    font-size: 12px;
+    margin: 5px 0 0px 0;
+}
+
+.setup-account-details{
+    margin: 7px 0;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(171, 170, 170);
+}
+.TNC-div{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 13px;
+    color: black;
+    font-family: "HkGrotesk";
+    margin-top: 10px;
+}
+.TNC-div input{
+    margin: 1px 5px 0 0;
+}
+
+.verify-submit-button{
+    border: none;
+    border-radius: 5px;
+    padding: 8px;
+    margin-top: 20px;
+    color: white;
+    font-weight: 500;
+    background-color: rgb(72, 72, 185);
+    cursor: pointer;
+}
+.verify-submit-button:disabled{
+    background-color: #CBD5E1;
+    color: rgb(84, 84, 84);
+    cursor: not-allowed;
+}
+
+.trouble-login-form{
+    text-align: right;
+    font-size: 12px;
+    margin-top: 20px;
+}

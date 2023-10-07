@@ -1,0 +1,32 @@
+.tab-list-item{
+    font-size: 16px;
+    background-color: inherit;
+    border-radius: 16px;
+    height: 56px;
+    overflow: hidden;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-family: "Inter";
+    color: rgb(194, 191, 191);
+    display: flex;
+    align-items: center;
+}
+.tab-icon{
+    font-size: 25px;
+    opacity: 0.4;
+}
+.tab-name{
+    margin-left: 10px;
+}
+.tab-list-item:hover, .active-tab{
+    white-space: pre-wrap;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.75;
+    letter-spacing: normal;
+    color: rgb(139, 92, 246);
+}
+.active-tab{
+    background-color: rgba(124, 58, 237, 0.16);
+}
