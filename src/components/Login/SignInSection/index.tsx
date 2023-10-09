@@ -64,7 +64,7 @@ const SignIn = (props: any) => {
 
                         <label htmlFor="UserPassword">Your password</label>
                         <input
-                            type="tel"
+                            type="password"
                             id="UserPassword"
                             name="password"
                             autoComplete='off'

@@ -1,0 +1,23 @@
+.circular-progress{
+    width : 30px;
+    height : 30px;
+    position: relative;
+    margin: -3px 15px 0 0;
+}
+.circle{
+    position : absolute;
+    /* z-index: 1; */
+    border: 4px solid rgb(202, 202, 202);
+    border-radius: 50%;
+    height: 35px;
+    width : 35px;
+}
+.inner-circle{
+    position : absolute;
+    /* z-index: 1; */
+    border: 4px solid rgb(31, 162, 31);
+    border-radius: 50%;
+    border-left-color: rgb(254, 247, 247);
+    height: 35px;
+    width : 35px;
+}

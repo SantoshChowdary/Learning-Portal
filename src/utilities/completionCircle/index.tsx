@@ -1,6 +1,5 @@
 import React from "react"
-import Stack from '@mui/material/Stack';
-import CircularProgress from '@mui/material/CircularProgress';
+import './index.css'
 
 const CompletionCircle = (props : any) => {
     if (props.availability_status === "LOCKED"){
@@ -24,9 +23,9 @@ const CompletionCircle = (props : any) => {
     } else {
       return (
         <div className="circular-progress">
-          <Stack spacing={1} direction="row">
-            <CircularProgress color="success" variant="determinate" value={props.completion_percentage} />
-          </Stack>
+          <div className="circle">
+          </div>
+          <div className="inner-circle"></div>
         </div>
       )
     }
