@@ -16,20 +16,16 @@
 }
 @keyframes colorChange {
     0% {
-        color: rgb(59, 137, 220);
-        font-size: 0px;
-        transform: rotate(-30deg);
+        color : black
     }
     33% {
-        color: rgb(137, 137, 232);
-        font-size: 20px;
+        color: rgb(7, 7, 244);
     }
     66% {
         color: green;
-        font-size: 10px;
     }
     100% {
-        color: rgb(202, 138, 138);
+        color: rgb(248, 9, 9);
     }
 }
 
@@ -38,7 +34,7 @@
     opacity: 0.7;
     margin-right: 10px;
     font-family: "inter";
-    animation: colorChange 7s ease-in-out 0s;
+    animation: colorChange 7s ease-in-out infinite;
 }
 .gc-display-section-2 span{
     opacity: 0.5;

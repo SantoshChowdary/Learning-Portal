@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {useHistory, Redirect} from 'react-router-dom'
+import {useHistory, Redirect, Link} from 'react-router-dom'
 import {supabase} from '../../../supabase/supabase'
 import Loader from '../../loader/loader';
 import { useDispatch, useSelector } from 'react-redux';
@@ -79,6 +79,7 @@ const SignIn = (props: any) => {
                             {isLoading ? <Loader /> : "Continue"}
                         </button>
                     </div>
+                    <span><Link to="signup">First time! SignUp</Link></span>
                 </form>
             </div>
         </div>

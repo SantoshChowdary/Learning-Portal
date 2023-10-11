@@ -1,0 +1,55 @@
+.user-profile-section{
+    position : absolute;
+    left : 10px;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor : pointer;
+    width: 220px;
+}
+.user-name-letter{
+    background-color:  rgb(47, 47, 142);
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    padding-top: 10px;
+    text-align: center;
+}
+.user-name{
+    padding: 0 5px;
+    color: rgb(204, 199, 199);
+    font-size: 18px;
+}
+.span-arrow{
+    color: white;
+    margin-top: 5px;
+}
+.profile-modal{
+    list-style-type: none;
+    margin-left: 35px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 15px;
+    width: 250px;
+    z-index: 5;
+    position: absolute;
+    left: 210px;
+    bottom: 10px;
+}
+.profile-modal li{
+    display: flex;
+    align-items: center;
+    color: black;
+    padding: 10px;
+    border-radius: 15px;
+}
+.profile-option{
+    padding-left: 5px;
+}
+.profile-modal li:hover{
+    background-color: antiquewhite;
+}

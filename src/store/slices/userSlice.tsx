@@ -15,9 +15,12 @@ const userSlice = createSlice({
         },
         updateUserLoggedStatus : (state, action) => {
             state.isUserLoggedIn = true
+        },
+        logOutUserFromSite : (state, action) => {
+            state.isUserLoggedIn = false
         }
     }
 })
 
-export const {addUserToDB, updateUserLoggedStatus} = userSlice.actions;
+export const {addUserToDB, updateUserLoggedStatus, logOutUserFromSite} = userSlice.actions;
 export default userSlice.reducer
