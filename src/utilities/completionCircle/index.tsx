@@ -16,7 +16,7 @@ const CompletionCircle = (props : any) => {
       return (
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="24" fill="none" viewBox="0 0 24 24">
-            <path fill="#16A34A" fill-rule="evenodd" d="M12 21.6a9.6 9.6 0 009.6-9.6A9.6 9.6 0 0012 2.4 9.6 9.6 0 002.4 12a9.6 9.6 0 009.6 9.6zM16.45 10.45a1.2 1.2 0 00-1.697-1.697L10.8 12.703 9.25 11.152a1.2 1.2 0 10-1.697 1.697l2.4 2.4a1.2 1.2 0 001.697 0l4.8-4.8z" clip-rule="evenodd"></path>
+            <path fill="#16A34A" fillRule="evenodd" d="M12 21.6a9.6 9.6 0 009.6-9.6A9.6 9.6 0 0012 2.4 9.6 9.6 0 002.4 12a9.6 9.6 0 009.6 9.6zM16.45 10.45a1.2 1.2 0 00-1.697-1.697L10.8 12.703 9.25 11.152a1.2 1.2 0 10-1.697 1.697l2.4 2.4a1.2 1.2 0 001.697 0l4.8-4.8z" clipRule="evenodd"></path>
           </svg>
         </div>
       )

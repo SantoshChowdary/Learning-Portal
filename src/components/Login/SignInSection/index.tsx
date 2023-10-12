@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {useHistory, Redirect, Link} from 'react-router-dom'
 import {supabase} from '../../../supabase/supabase'
-import Loader from '../../loader/loader';
+import Loader from '../../../utilities/loader/loader';
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUserLoggedStatus, addUserToDB } from '../../../store/slices/userSlice';
 import './main.css';

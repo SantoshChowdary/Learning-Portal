@@ -9,13 +9,13 @@ const SingleTab = (props : any) => {
 
     const changeActiveTabId = () => {
         props.makeActiveTab(tabId)
+        localStorage.setItem("activeTabId", tabId)
     }
-
     const ActiveTabClass = (tabId === props.activeMainTabId) ? "active-tab" : ""
 
   return (
-    <Link to={slug} className="tab-link">
-        <li className={`tab-list-item ${ActiveTabClass}`} role="button" onClick={changeActiveTabId}>
+    <Link to={slug} className="tab-link" onClick={changeActiveTabId}>
+        <li className={`tab-list-item ${ActiveTabClass}`}>
             {
                 (tabId === props.activeMainTabId) ? <AiOutlineCrown className='tab-icon' /> : <AiOutlineSlack className='tab-icon' />
             }

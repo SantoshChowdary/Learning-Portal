@@ -1,0 +1,21 @@
+.main-homepage-section{
+    display: flex;
+}
+.homepage-section{
+    background-color: rgb(226, 238, 245);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius:  25px;
+    margin-left: calc(256px - 100vw);
+    width: calc(100vw - 256px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+}
+.home-page-profile-section{
+    width: 450px;
+}
+.daily-schedule-page{
+    min-width: calc(100vw - 256px - 450px);
+    min-height: 100vh;
+}

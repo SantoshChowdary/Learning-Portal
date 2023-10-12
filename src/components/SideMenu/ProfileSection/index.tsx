@@ -11,7 +11,7 @@ export const ProfileSection = () => {
   const [profileModalStatus, setProfileModalStatus] = useState(false)
   const userData = useSelector((state : any) => state.user.userData)
   const dispatch = useDispatch()
-  const user_name = "test"
+  const user_name = "testing"
   const profileModalDisplayStatus = profileModalStatus ? "block" : "none"
 
   const displayProfileModal = () => {
@@ -24,7 +24,7 @@ export const ProfileSection = () => {
 
   return (
     <div className="user-profile-section" onClick={displayProfileModal}>
-        <p className="user-name-letter">{user_name[0]}</p>
+        <img className="user-profile-icon" alt="profile-img" src="	https://media-content.ccbp.in/ccbp_prod/media/profile_pic/edd3cfcb-5b42-42fd-a45d-c4211955291d.jpeg" />
         <p className="user-name">{user_name}</p>
         <span className="span-arrow"><BsFillCaretRightFill /></span>
         <ul className="profile-modal" style={{display : profileModalDisplayStatus}}>

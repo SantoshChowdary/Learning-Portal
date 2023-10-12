@@ -16,16 +16,16 @@
 }
 @keyframes colorChange {
     0% {
-        color : black
+        color : rgb(183, 182, 182)
     }
     33% {
-        color: rgb(7, 7, 244);
+        color: rgb(105, 105, 106);
     }
     66% {
-        color: green;
+        color: rgb(85, 86, 85);
     }
     100% {
-        color: rgb(248, 9, 9);
+        color: rgb(7, 7, 7);
     }
 }
 

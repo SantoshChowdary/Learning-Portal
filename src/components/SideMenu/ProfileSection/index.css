@@ -1,23 +1,17 @@
 .user-profile-section{
     position : absolute;
     left : 10px;
-    bottom: 10px;
+    bottom: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     cursor : pointer;
     width: 220px;
 }
-.user-name-letter{
-    background-color:  rgb(47, 47, 142);
-    width: 70px;
-    height: 70px;
+.user-profile-icon{
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
-    color: white;
-    font-size: 30px;
-    font-weight: 600;
-    padding-top: 10px;
-    text-align: center;
 }
 .user-name{
     padding: 0 5px;

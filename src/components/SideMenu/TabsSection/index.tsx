@@ -6,7 +6,8 @@ import './index.css'
 
 const MainHomeTabs = (props : any) => {
     const [tabsList, setTabsList] = useState<any>([])
-    const [activeMainTabId, setActiveMainTabId] = useState("")
+    const activeTabId = localStorage.getItem("activeTabId")
+    const [activeMainTabId, setActiveMainTabId] = useState(activeTabId || "31e498c4-e06c-4372-9e20-ac8ebf743a0b")
 
     const getTabsList = async () => {
         const apiCallForTabs = await supabase.from("main_home_tabs").select()

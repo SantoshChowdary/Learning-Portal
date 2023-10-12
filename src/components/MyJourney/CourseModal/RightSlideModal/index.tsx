@@ -7,7 +7,6 @@ const RightSlideModal = ({ isOpen, onClose, courseDetails } : any) => {
 
   const modalClass = isOpen ? 'right-slide-modal open-slide' : 'right-slide-modal';
   const {course_id, course_title, completion_percentage,availability_status, course_meta_data} = courseDetails
-  console.log(course_meta_data)
   const courseMetaData = JSON.parse(course_meta_data)
 
   return (
