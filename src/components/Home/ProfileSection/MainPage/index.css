@@ -3,4 +3,66 @@
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     min-height: 100vh;
+    padding: 20px;
+}
+.profile-first-section{
+    display: flex;
+    margin: 5px;
+}
+.main-profile-image{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.profile-second-section{
+    margin-left: 10px;
+}
+.profile-name{
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(12, 24, 42);
+    margin: 8px;
+}
+.daily-rank{
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 13px;
+    color: rgb(76, 105, 150);
+    margin: 8px;
+}
+.profile-date{
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 10px;
+    color: rgb(65, 89, 127);
+    margin: 8px;
+}
+.coins-section{
+    display: flex;
+}
+.store-section{
+    background-image: url(https://media-content.ccbp.in/website/static-images/gamification_images/desktop_redeem_store_card.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(203, 213, 225);
+    border-radius: 16px;
+    height: 120px;
+    padding: 16px;
+    margin-bottom: 81px;
+    background-size: 151px;
+    margin-top: 20px;
+}
+.store-section p{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+    color: rgb(51, 65, 85);
+}
+.store-section span{
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 14px;
+    color: rgb(100, 116, 139);
 }

@@ -24,7 +24,7 @@ export const ProfileSection = () => {
 
   return (
     <div className="user-profile-section" onClick={displayProfileModal}>
-        <img className="user-profile-icon" alt="profile-img" src="	https://media-content.ccbp.in/ccbp_prod/media/profile_pic/edd3cfcb-5b42-42fd-a45d-c4211955291d.jpeg" />
+        <img className="user-profile-icon" alt="profile-img" src="https://media-content.ccbp.in/ccbp_prod/media/profile_pic/edd3cfcb-5b42-42fd-a45d-c4211955291d.jpeg" />
         <p className="user-name">{user_name}</p>
         <span className="span-arrow"><BsFillCaretRightFill /></span>
         <ul className="profile-modal" style={{display : profileModalDisplayStatus}}>

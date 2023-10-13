@@ -2,12 +2,14 @@ import React, {useState, useEffect} from 'react'
 import SideMenu from '../../SideMenu/SideBar'
 import { supabase } from '../../../supabase/supabase'
 import DisplayGCs from '../DisplayGcs'
+import Loader from '../../../utilities/loader/loader'
 
 import './index.css'
 
 const MyJourney = (props : any) => {
   const [myJourneyGCsData, setMyJourneyGCsData] = useState<any>([])
   const [myJourneyCoursesData, setMyJourneyCoursesData] = useState<any>([])
+  const [isLoadingMyJourneyData, setMyJourneyLoadingStatus] = useState(true)
 
   const getMyJourneyGCsData = async () => {
     const {data, error} = await supabase.from("growth_cycles").select();
@@ -18,8 +20,13 @@ const MyJourney = (props : any) => {
 
   const getMyJourneyCoursesData = async () => {
     const {data, error} = await supabase.from("main_courses").select();
-    if (data?.length !== 0){
+    console.log(error)
+    if (error?.code) {
+      alert(error.message)
+      setMyJourneyLoadingStatus(true)
+    } else if (data?.length !== 0){
       setMyJourneyCoursesData(data)
+      setMyJourneyLoadingStatus(false)
     }
   }
 
@@ -32,15 +39,19 @@ const MyJourney = (props : any) => {
     <div className="my-journey-main-section">
         <SideMenu />
         <div className="my-journey-section">
-            <h1>My Journey</h1>
-            <ul className="my-journey-gcs">
-              {
-                myJourneyGCsData.map( (growthCycleData : any) => (
-                  <DisplayGCs key={growthCycleData.growth_cycle_id} growthCycleData={growthCycleData} myJourneyCoursesData={myJourneyCoursesData} />
-                ))
-              }
-            </ul>
-            
+          {
+            isLoadingMyJourneyData ? <Loader /> : 
+            <>
+              <h1>My Journey</h1>
+              <ul className="my-journey-gcs">
+                {
+                  myJourneyGCsData.map( (growthCycleData : any) => (
+                    <DisplayGCs key={growthCycleData.growth_cycle_id} growthCycleData={growthCycleData} myJourneyCoursesData={myJourneyCoursesData} />
+                  ))
+                }
+              </ul>
+            </>
+          }
         </div>
     </div>
   )

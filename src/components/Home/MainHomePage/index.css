@@ -18,4 +18,5 @@
 .daily-schedule-page{
     min-width: calc(100vw - 256px - 450px);
     min-height: 100vh;
+    padding: 40px;
 }

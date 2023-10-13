@@ -1,7 +1,7 @@
 import React from 'react'
 import EnrollPlanIcon from '../PlanIcon'
 import MainHomeTabs from '../TabsSection'
-import ProfileSection from '../ProfileSection'
+import ProfileSection from '../SideProfileSection'
 
 
 import "./index.css"

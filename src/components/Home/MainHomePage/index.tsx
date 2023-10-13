@@ -1,6 +1,7 @@
 import React from 'react'
 import SideMenu from '../../SideMenu/SideBar'
 import MainProfileSection from '../ProfileSection/MainPage'
+import MainSchedule from '../Schedule/Main'
 import './index.css'
 
 const Home = () => {
@@ -9,10 +10,10 @@ const Home = () => {
         <SideMenu />
         <div className="homepage-section">
           <div className="daily-schedule-page">
-              <h1>Your Schedule</h1>
+              <MainSchedule />
           </div>
           <div className="home-page-profile-section">
-          <MainProfileSection />
+            <MainProfileSection />
           </div>
           
         </div>

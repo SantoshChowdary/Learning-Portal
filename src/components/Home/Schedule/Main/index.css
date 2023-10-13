@@ -1,0 +1,18 @@
+.schedule-first-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.your-schedule{
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 24px;
+    color: rgb(51, 65, 85);
+    margin-bottom: 10px;
+}
+.date-element{
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 14px;
+    color: rgb(100, 116, 139);
+}
