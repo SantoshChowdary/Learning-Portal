@@ -1,0 +1,31 @@
+.single-bookmark-section{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(203, 213, 225);
+    border-radius: 16px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 18px;
+    margin-top: 14px;
+    cursor: pointer;
+}
+.bookmark-unit-name{
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 18px;
+    color: rgb(51, 65, 85);
+    margin-bottom: 8px;
+}
+.bookmark-parent-name{ 
+    font-size: 14px;
+    font-weight: 500;
+}
+.unit-status-display{
+    font-family: "Inter";
+    font-size: 12px;
+    margin-top: 12px;
+}
+.bookmark-data-div{
+    width: 90%;
+}

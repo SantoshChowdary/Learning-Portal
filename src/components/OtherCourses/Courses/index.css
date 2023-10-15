@@ -8,6 +8,7 @@
     width: 255px;
     height: 350px;
     user-select: none;
+    background-color: #f9fbfb;
 }
 .other-course-image{
     width: inherit;

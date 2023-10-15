@@ -8,6 +8,7 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import Home from './components/Home/MainHomePage';
 import MyJourney from './components/MyJourney/MainSection';
 import OtherCourses from './components/OtherCourses/Main';
+import Bookmarks from './components/Bookmarks/Main';
 import './App.css';
 
 
@@ -20,7 +21,7 @@ function App(props : any) {
           <ProtectedRoute exact path="/" component={Home} />
           <ProtectedRoute exact path="/my-journey" component={MyJourney} />
           <ProtectedRoute exact path="/other-courses" component={OtherCourses} />
-          <ProtectedRoute exact path="/bookmarks" component={Home} />
+          <ProtectedRoute exact path="/bookmarks" component={Bookmarks} />
           <ProtectedRoute exact path="/playground" component={Home} />
           <ProtectedRoute exact path="/code-snippets" component={Home} />
           <ProtectedRoute exact path="/discussions" component={Home} />
