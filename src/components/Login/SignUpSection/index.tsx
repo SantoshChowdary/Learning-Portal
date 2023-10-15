@@ -48,9 +48,9 @@ const SignUp = (props: any) => {
                                     password : newUserData.userPassword
                                 })
         if (error === null){
-            dispatch(addUserToDB(newUserData))
-            dispatch(updateUserLoggedStatus(true))
-            history.push("/")
+            // dispatch(addUserToDB(newUserData))
+            // dispatch(updateUserLoggedStatus(true))
+            history.push("/login")
         } else if (error.details) {
             alert(error.details + "in data base")
         }

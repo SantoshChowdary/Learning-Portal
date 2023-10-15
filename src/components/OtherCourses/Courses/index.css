@@ -1,0 +1,40 @@
+.additional-course{
+    margin: 10px 10px 15px 05px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 2px 2px rgb(211, 211, 225);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 255px;
+    height: 350px;
+    user-select: none;
+}
+.other-course-image{
+    width: inherit;
+    height: 144px;
+    overflow: hidden;
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
+}
+.course-name{
+    font-family: "Inter";
+    font-weight: 500;
+    color: rgb(0, 35, 79);
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 5px;
+    height: 35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.course-description{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: auto;
+    height: 110px;
+    font-family: "Inter";
+    font-size: 14px;
+    color: rgb(53, 78, 110);
+    line-height: 2;
+    padding: 5px 10px 10px 10px;
+}

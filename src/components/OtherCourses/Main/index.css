@@ -1,0 +1,17 @@
+.other-courses-tab{
+    display: flex;
+}
+.other-courses-section{
+    background-color: rgb(233, 235, 235);
+    border-top-left-radius: 25px;
+    border-bottom-left-radius:  25px;
+    margin-left: calc(256px - 100vw);
+    width: calc(100vw - 256px);
+    padding : 40px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 100vh;
+}
+.course-category-main-section{
+    padding: 0;
+}
