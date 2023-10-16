@@ -1,12 +1,12 @@
 .additional-course{
-    margin: 10px 10px 15px 05px;
+    margin: 10px 15px 15px 05px;
     border-radius: 15px;
     box-shadow: 0px 0px 2px 2px rgb(211, 211, 225);
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    width: 255px;
-    height: 350px;
+    width: 240px;
+    height: 340px;
     user-select: none;
     background-color: #f9fbfb;
 }

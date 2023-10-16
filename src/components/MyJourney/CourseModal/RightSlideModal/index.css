@@ -83,11 +83,16 @@
   justify-content: space-around;
   border-bottom: 1px solid rgb(203, 213, 225);
 }
-.modal-tabs p{
+.modal-tab{
   font-family: Inter;
   font-weight: 600;
   font-size: 14px;
   color: rgb(100, 116, 139);
   border-bottom: 4px solid transparent;
   cursor: pointer;
+  padding: 0 5px;
+}
+.active-modal-tab{
+  border-bottom: 2px solid rgb(105, 34, 235);
+  border-radius: 10px;
 }

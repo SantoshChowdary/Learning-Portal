@@ -4,10 +4,20 @@ import './index.css';
 
 const RightSlideModal = ({ isOpen, onClose, courseDetails } : any) => {
   const [modalPurposeStatus, setModalPurposeStatus] = useState(true)
+  // let COURSE_PLAN = "COURSE_PLAN", CHEAT_SHEETS = "CHEAT_SHEETS", CERTIFICATION = "CERTIFICATION"
+  const [activeModalTab, setActiveModalTab] = useState<number>(0)
+
+  const modalTabsList = ["Course Plan", "Cheat Sheets", "Certification"]
+  
 
   const modalClass = isOpen ? 'right-slide-modal open-slide' : 'right-slide-modal';
   const {course_id, course_title, completion_percentage,availability_status, course_meta_data} = courseDetails
   const courseMetaData = JSON.parse(course_meta_data)
+
+  const handleModalActiveTab = (index : number) => {
+    setActiveModalTab(index)
+  }
+
 
   return (
     <div className={modalClass}>
@@ -30,15 +40,21 @@ const RightSlideModal = ({ isOpen, onClose, courseDetails } : any) => {
         <ul className="modal-course-purpose-content" style={{display: (modalPurposeStatus ? "none" : "block")}}>
           {
             courseMetaData.why_this_course.map( (item : any) => (
-              <li>{item}</li>
+              <li key={item}>{item}</li>
             ))
           }
         </ul>
         <div className="modal-main-content">
           <div className='modal-tabs'>
-            <p>Course Plan</p>
-            <p>Cheat Sheets</p>
-            <p>Certification</p>
+            {
+              modalTabsList.map( (item: string, index) => (
+                <p key={index} onClick={() => handleModalActiveTab(index)}
+                  className={(activeModalTab===index) ? "active-modal-tab modal-tab" : "modal-tab"}
+                >
+                  {item}
+                </p>
+              ))
+            }
           </div>
         </div>
       </div>
