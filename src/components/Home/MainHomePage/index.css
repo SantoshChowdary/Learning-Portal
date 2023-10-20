@@ -2,7 +2,7 @@
     display: flex;
 }
 .homepage-section{
-    background-color: rgb(226, 238, 245);
+    background-color: rgb(241, 245, 249);
     border-top-left-radius: 25px;
     border-bottom-left-radius:  25px;
     margin-left: calc(256px - 100vw);
@@ -13,10 +13,10 @@
     display: flex;
 }
 .home-page-profile-section{
-    width: 450px;
+    width: 400px;
 }
 .daily-schedule-page{
-    min-width: calc(100vw - 256px - 450px);
+    max-width: calc(100vw - 256px - 400px);
     min-height: 100vh;
-    padding: 40px;
+    padding: 20px;
 }

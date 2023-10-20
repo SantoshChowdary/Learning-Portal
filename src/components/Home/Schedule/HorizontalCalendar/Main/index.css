@@ -1,0 +1,83 @@
+.horizontal-calendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: inherit;
+    padding: 5px;
+  }
+  
+  .arrow {
+    width: 20px;
+    height: 20px;
+    background-color: #ccc;
+    cursor: pointer;
+  }
+  
+  .left-arrow {
+    background: none;
+    padding-top: 5px;
+    user-select: none;
+  }
+  
+  .right-arrow {
+    background: none;
+    padding-top: 5px;
+    user-select: none;
+  }
+  .calendar-menu-wrapper{
+    overflow: hidden;
+    user-select: none;
+    margin: 0 10px;
+  }
+  .calendar-container {
+    display: flex;
+    flex-wrap: nowrap;
+    /* overflow-x: scroll; */
+    margin: 10px;
+    transition: transform 0.4s ease-out 0s;
+  }
+  .calendar-container::-webkit-scrollbar{
+    display: none;
+  }
+  .day {
+    margin-right: 3px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-family: "Inter";
+    color: rgb(30, 41, 59);;
+    background: none;
+  }
+  .day:disabled{
+    cursor: not-allowed;
+  }
+  .day:disabled .date {
+    background-color: rgb(226, 232, 240);
+    opacity: 0.4;
+  }
+  .day:disabled .day-name{
+    opacity: 0.4;
+  }
+  
+  .selected {
+    border: 2px solid rgb(124, 58, 237);
+  }
+  
+  .date {
+    font-size: 13px;
+    background-color: rgb(226, 232, 240);;
+    border-radius: 8px;
+    width: 37px;
+    height: 37px;
+    margin-top: 5px;
+    /* padding-top: 10px; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .day-name {
+    font-size: 11px;
+  }
+  

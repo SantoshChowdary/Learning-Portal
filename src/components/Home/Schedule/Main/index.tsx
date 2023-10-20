@@ -1,4 +1,5 @@
 import React from 'react'
+import HorizontalCalendar from '../HorizontalCalendar/Main'
 import './index.css'
 
 const MainSchedule = () => {
@@ -9,7 +10,9 @@ const MainSchedule = () => {
                 <h1 className='your-schedule'>Your Schedule</h1>
                 <span className='date-element'>Fri, 12 May 2023</span>
             </div>
-            <div>Calender Component</div>
+            <div>
+              <HorizontalCalendar />
+            </div>
         </div>
     </div>
   )

@@ -1,7 +1,8 @@
 .schedule-first-section{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: center; */
 }
 .your-schedule{
     font-family: Inter;
