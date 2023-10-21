@@ -21,7 +21,6 @@ const SignIn = (props: any) => {
         e.preventDefault()
         const apiCall = await supabase.from('user_authentication').select().eq('mobile_number', phoneNumber).eq("password", password)
         const checkValidUserInDB = await supabase.from('user_authentication').select().eq('mobile_number', phoneNumber)
-        console.log(checkValidUserInDB)
         if ( apiCall.status === 200 ){
             setLoadingStatus(false)
             if (apiCall.data?.length === 0 && checkValidUserInDB.data?.length === 0){
@@ -31,7 +30,6 @@ const SignIn = (props: any) => {
             } else if (apiCall.data?.length !== 0 && checkValidUserInDB.data?.length !== 0){
                 dispatch(updateUserLoggedStatus(true))
                 dispatch(addUserToDB(apiCall.data))
-                console.log(apiCall.data)
                 history.replace("/")
             }
         }

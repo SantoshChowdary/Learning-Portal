@@ -7,7 +7,7 @@
     border-bottom-left-radius:  25px;
     margin-left: calc(256px - 100vw);
     width: calc(100vw - 256px);
-    overflow-y: scroll;
+    overflow-y: none;
     overflow-x: hidden;
     height: 100vh;
     display: flex;
@@ -18,5 +18,6 @@
 .daily-schedule-page{
     max-width: calc(100vw - 256px - 400px);
     min-height: 100vh;
+    overflow: none;
     padding: 20px;
 }

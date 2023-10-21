@@ -1,17 +1,22 @@
 import React from 'react'
 import HorizontalCalendar from '../HorizontalCalendar/Main'
+import ScheduleContent from '../ScheduleContent'
 import './index.css'
 
 const MainSchedule = () => {
+  const todayDate = new Date()
   return (
     <div>
         <div className="schedule-first-section">
             <div>
                 <h1 className='your-schedule'>Your Schedule</h1>
-                <span className='date-element'>Fri, 12 May 2023</span>
+                <span className='date-element'>{todayDate.toLocaleDateString("en-US", {weekday : "short"})}, {todayDate.toLocaleDateString("en-US", {
+                  year: "numeric", month: "short", day: "numeric"
+                })}</span>
             </div>
-            <div>
+            <div className='main-schedule-content-section'>
               <HorizontalCalendar />
+              <ScheduleContent />
             </div>
         </div>
     </div>

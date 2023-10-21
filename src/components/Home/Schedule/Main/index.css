@@ -17,3 +17,6 @@
     font-size: 14px;
     color: rgb(100, 116, 139);
 }
+.main-schedule-content-section{
+    max-height: 90vh;
+}

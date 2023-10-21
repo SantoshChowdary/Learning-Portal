@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import { v4 as uuidv4 } from 'uuid';
+import { updateSelectedDate } from '../../../../../store/slices/scheduleSlice';
+import { useDispatch } from 'react-redux';
 import './index.css'
 
 
@@ -19,8 +21,9 @@ const HorizontalCalendar = () => {
   const [dates, setDates] = useState(generateDates())
   const [selectedDate, setSelectedDate] = useState(null)
   const [transform, setTransform] = useState(0)
+  const dateRef : any = useRef(null)
+  const dispatch = useDispatch()
 
-  console.log(dates.length)
 
   const generateFutureDate = () => {
     if ((dates[dates.length -1].getFullYear() < 1970) || dates[dates.length -1].getFullYear() >= 2030){
@@ -48,10 +51,12 @@ const HorizontalCalendar = () => {
   };
 
   const handleDayClick = (date : any, index: number) => {
-    console.log(date)
     setSelectedDate(date);
-    setTransform(transform - 500)
-  
+    setTransform(transform - 100)
+    // console.log("child",dateRef.current.getBoundingClientRect())
+    // console.log("parent", dateRef.current.parentElement.getBoundingClientRect())
+    
+    dispatch(updateSelectedDate(date.toLocaleDateString()))
   };
 
   return (
@@ -63,7 +68,7 @@ const HorizontalCalendar = () => {
             <button
               key={uuidv4()}
               className="day"
-              
+              ref={dateRef}
               onClick={() => handleDayClick(date, index)}
               disabled={date.getDay() === 0}
             >

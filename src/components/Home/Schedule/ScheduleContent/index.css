@@ -1,0 +1,21 @@
+.schedule-display-section{
+    padding: 20px;
+    height: inherit;
+    /* overflow: hidden scroll; */
+}
+.scheduled-courses-list{
+    padding: 0;
+    list-style-type: none;
+}
+.scheduled-course-item{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    margin: 25px 0;
+    padding: 20px;
+    background-image: url("https://d1tgh8fmlzexmh.cloudfront.net/website/static-images/track_gradients/intro_to_tech.jpg");
+    box-shadow: 0 0 2px 2px grey;
+}
