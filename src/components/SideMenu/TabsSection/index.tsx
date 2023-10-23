@@ -4,8 +4,10 @@ import SingleTab from './SingleTab'
 
 import './index.css'
 
+const localSavedTabsList : any  = localStorage.getItem("mainHomeTabs")
+
 const MainHomeTabs = (props : any) => {
-    const [tabsList, setTabsList] = useState<any>([])
+    const [tabsList, setTabsList] = useState<any>(JSON.parse(localSavedTabsList) || [])
     const activeTabId = localStorage.getItem("activeTabId")
     const [activeMainTabId, setActiveMainTabId] = useState(activeTabId || "31e498c4-e06c-4372-9e20-ac8ebf743a0b")
 
@@ -13,6 +15,7 @@ const MainHomeTabs = (props : any) => {
         const apiCallForTabs = await supabase.from("main_home_tabs").select()
         if (apiCallForTabs.data?.length !== 0){
             setTabsList(apiCallForTabs.data)
+            localStorage.setItem("mainHomeTabs", JSON.stringify(apiCallForTabs.data))
         }
     }
 

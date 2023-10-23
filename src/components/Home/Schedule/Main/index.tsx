@@ -1,5 +1,5 @@
 import React from 'react'
-import HorizontalCalendar from '../HorizontalCalendar/Main'
+import HorizontalCalendar from '../HorizontalCalendar'
 import ScheduleContent from '../ScheduleContent'
 import './index.css'
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom'
-import {Switch, Route} from 'react-router'
+import {Switch, Route, Redirect} from 'react-router'
 
 import SignIn from './components/Login/SignInSection';
 import SignUp from './components/Login/SignUpSection';
@@ -26,6 +26,8 @@ function App(props : any) {
           <ProtectedRoute exact path="/code-snippets" component={Home} />
           <ProtectedRoute exact path="/discussions" component={Home} />
           <ProtectedRoute exact path="/course" component={Home} />
+          <Route path="/not-found" component={Home} />
+          <Redirect to="not-found" />
       </Switch>
     </BrowserRouter>
   );

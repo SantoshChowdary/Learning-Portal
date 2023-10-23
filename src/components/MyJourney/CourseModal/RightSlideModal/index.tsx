@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
-
+import React, { useState, useRef, useEffect } from 'react';
+import MyJourneyCourseUnits from '../DisplayModalUnits';
 import './index.css'; 
 
 const RightSlideModal = ({ isOpen, onClose, courseDetails } : any) => {
   const [modalPurposeStatus, setModalPurposeStatus] = useState(true)
   // let COURSE_PLAN = "COURSE_PLAN", CHEAT_SHEETS = "CHEAT_SHEETS", CERTIFICATION = "CERTIFICATION"
-  const [activeModalTab, setActiveModalTab] = useState<number>(0)
+  const [activeModalTab, setActiveModalTab] = useState<number>(0);
+  const modalRef : any = useRef(null)
 
   const modalTabsList = ["Course Plan", "Cheat Sheets", "Certification"]
   
 
   const modalClass = isOpen ? 'right-slide-modal open-slide' : 'right-slide-modal';
+  // eslint-disable-next-line
   const {course_id, course_title, completion_percentage,availability_status, course_meta_data} = courseDetails
   const courseMetaData = JSON.parse(course_meta_data)
 
@@ -18,9 +20,20 @@ const RightSlideModal = ({ isOpen, onClose, courseDetails } : any) => {
     setActiveModalTab(index)
   }
 
+  useEffect(()=> {
+    const handleClickOutside = (event : React.MouseEvent) => {
+      if(modalRef.current && !modalRef.current.contains(event.target)){
+        console.log("outside")
+        onClose();
+      }
+      document.addEventListener("mousedown", () => handleClickOutside)
+    }
+
+  }, [])
+
 
   return (
-    <div className={modalClass}>
+    <div className={modalClass} ref={modalRef}>
       <div className="modal-content">
         <button className="close-button" onClick={onClose}>
           &times;
@@ -56,6 +69,9 @@ const RightSlideModal = ({ isOpen, onClose, courseDetails } : any) => {
               ))
             }
           </div>
+        </div>
+        <div>
+          <MyJourneyCourseUnits courseId={course_id} />
         </div>
       </div>
     </div>

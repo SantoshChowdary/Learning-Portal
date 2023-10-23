@@ -1,13 +1,13 @@
 import React, { useState, useRef } from 'react';
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import { v4 as uuidv4 } from 'uuid';
-import { updateSelectedDate } from '../../../../../store/slices/scheduleSlice';
+import { updateSelectedDate } from '../../../../store/slices/scheduleSlice';
 import { useDispatch } from 'react-redux';
 import './index.css'
 
 
 const generateDates = () => {
-    const currentDate = new Date();
+    const currentDate = new Date("05-05-2023");
     const dateArray = [];
     for (let i = 0; i < 300; i++) {
       dateArray.push(new Date(currentDate));
@@ -19,7 +19,7 @@ const generateDates = () => {
 
 const HorizontalCalendar = () => {
   const [dates, setDates] = useState(generateDates())
-  const [selectedDate, setSelectedDate] = useState(null)
+  const [selectedDate, setSelectedDate] = useState( new Date())
   const [transform, setTransform] = useState(0)
   const dateRef : any = useRef(null)
   const dispatch = useDispatch()
