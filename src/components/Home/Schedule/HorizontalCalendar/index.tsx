@@ -7,9 +7,9 @@ import './index.css'
 
 
 const generateDates = () => {
-    const currentDate = new Date("05-05-2023");
+    const currentDate = new Date("10-10-2023");
     const dateArray = [];
-    for (let i = 0; i < 300; i++) {
+    for (let i = 0; i < 100; i++) {
       dateArray.push(new Date(currentDate));
       currentDate.setDate(currentDate.getDate() + 1);
     }
@@ -19,24 +19,26 @@ const generateDates = () => {
 
 const HorizontalCalendar = () => {
   const [dates, setDates] = useState(generateDates())
-  const [selectedDate, setSelectedDate] = useState( new Date())
+  const [selectedDate, setSelectedDate] = useState( new Date() )
   const [transform, setTransform] = useState(0)
   const dateRef : any = useRef(null)
   const dispatch = useDispatch()
 
-
+  console.log(dates)
   const generateFutureDate = () => {
-    if ((dates[dates.length -1].getFullYear() < 1970) || dates[dates.length -1].getFullYear() >= 2030){
-      return null
-    }
-    const currentDate = new Date(dates[dates.length-1].getDate() + 1);
+    if ((dates[dates.length -1].getFullYear() < 2010) || dates[dates.length -1].getFullYear() >= 2030){
+       
+    } else {
+      const currentDate = new Date(dates[dates.length-1].getDate() + 1);
     const dateArray = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
       dateArray.push(new Date(currentDate));
       currentDate.setDate(currentDate.getDate() + 1);
     }
     const newDatesArr = [ ...dates, ...dateArray];
     setDates(newDatesArr)
+    }
+    
   }
 
 
@@ -53,11 +55,11 @@ const HorizontalCalendar = () => {
   const handleDayClick = (date : any, index: number) => {
     setSelectedDate(date);
     setTransform(transform - 100)
-    // console.log("child",dateRef.current.getBoundingClientRect())
-    // console.log("parent", dateRef.current.parentElement.getBoundingClientRect())
     
     dispatch(updateSelectedDate(date.toLocaleDateString()))
   };
+
+  console.log(dates)
 
   return (
     <div className="horizontal-calendar">
@@ -71,7 +73,7 @@ const HorizontalCalendar = () => {
               ref={dateRef}
               onClick={() => handleDayClick(date, index)}
               disabled={date.getDay() === 0}
-            >
+            > 
               <div className="day-name">{date.toLocaleDateString('en-US', { weekday: 'short' })}</div>
               <div className={`date ${date === selectedDate ? 'selected' : ''}`}>
                   <p>{date.getDate()}</p>

@@ -66,6 +66,7 @@
   font-size: 18px;
   color: rgb(51, 65, 85);
   margin: 15px 0;
+  cursor: pointer;
 }
 .modal-course-purpose-content li{
   list-style-type: disc;

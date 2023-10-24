@@ -1,10 +1,13 @@
 import React from 'react'
 import HorizontalCalendar from '../HorizontalCalendar'
 import ScheduleContent from '../ScheduleContent'
+import { useSelector } from 'react-redux'
 import './index.css'
 
 const MainSchedule = () => {
-  const todayDate = new Date()
+  
+  const userSelectedDate: any = useSelector((state : any) => state.schedule.selectedDate)
+  const todayDate = new Date(userSelectedDate)
   return (
     <div>
         <div className="schedule-first-section">
