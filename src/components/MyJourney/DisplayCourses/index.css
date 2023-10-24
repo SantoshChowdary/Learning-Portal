@@ -12,7 +12,12 @@
 }
 .journey-course-name{
     font-family: "inter";
-    font-size: 13px;
+    font-size: 0.9rem;
     font-weight: 600;
     opacity: 0.7;
+}
+.journey-course-completion{
+    width : 30px;
+    height : 30px;
+    margin: -3px 15px 0 0;
 }

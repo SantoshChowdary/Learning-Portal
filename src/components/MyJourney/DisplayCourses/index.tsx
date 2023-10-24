@@ -8,6 +8,8 @@ import  './index.css'
 const DisplayCourses = (props : any) => {
   const [modalOpen, setModalOpen] = useState(false);
 
+
+
   const openModal = () => {
     setModalOpen(!modalOpen);
   };
@@ -16,10 +18,12 @@ const DisplayCourses = (props : any) => {
     setModalOpen(false);
   };
 
+  const setPointerEvents = modalOpen ? "none" : "auto"
+
     
   return (
     <div>
-      <div className="journey-course" role="button" onClick={openModal}>
+      <div className="journey-course" role="button" onClick={modalOpen ? closeModal : openModal} style={{pointerEvents : setPointerEvents}}>
           <span className="journey-course-name">{props.courseDetails.course_title}</span>
           <div className='journey-course-completion'>
             <CompletionCircle availability_status={props.courseDetails.availability_status} completion_percentage={props.courseDetails.completion_percentage} />

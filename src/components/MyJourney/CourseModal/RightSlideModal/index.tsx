@@ -20,16 +20,19 @@ const RightSlideModal = ({ isOpen, onClose, courseDetails } : any) => {
     setActiveModalTab(index)
   }
 
+  console.log(isOpen)
   useEffect(()=> {
     const handleClickOutside = (event : React.MouseEvent) => {
       if(modalRef.current && !modalRef.current.contains(event.target)){
-        console.log("outside")
         onClose();
-      }
-      document.addEventListener("mousedown", () => handleClickOutside)
+      }  
+    }
+    document.addEventListener("mousedown", (e: any) => handleClickOutside(e))
+    return ()=> {
+      document.removeEventListener("mousedown", (e: any) => handleClickOutside(e))
     }
 
-  }, [])
+  }, [isOpen, onClose])
 
 
   return (
@@ -70,7 +73,7 @@ const RightSlideModal = ({ isOpen, onClose, courseDetails } : any) => {
             }
           </div>
         </div>
-        <div>
+        <div className='modal-resource-display'>
           <MyJourneyCourseUnits courseId={course_id} />
         </div>
       </div>

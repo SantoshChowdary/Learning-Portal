@@ -20,7 +20,6 @@ const MyJourney = (props : any) => {
 
   const getMyJourneyCoursesData = async () => {
     const {data, error} = await supabase.from("main_courses").select();
-    console.log(error)
     if (error?.code) {
       alert(error.message)
       setMyJourneyLoadingStatus(true)

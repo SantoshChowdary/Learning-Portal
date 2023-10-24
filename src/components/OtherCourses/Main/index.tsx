@@ -14,7 +14,7 @@ const OtherCourses = () => {
         const {data, error} = await supabase.from("other_courses").select()
         if (error?.code) {
             alert(error.message)
-            setOtherCoursesLadingStatus(true)
+            // setOtherCoursesLadingStatus(true)
           } else if (data?.length !== 0){
             setOtherCoursesData(data)
             setOtherCoursesLadingStatus(false)

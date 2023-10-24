@@ -21,14 +21,12 @@
     align-items: center;
     font-weight: 600;
 }
+.course-modal-topic-3{
+    display: flex;
+}
 .modal-units-list{
   padding: 0;
   margin: 15px 0;
-  /* min-height: 30vh;
-  transition: min-height 0.1s;
-  transition-duration: 5s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0.2s; */
 }
 .modal-unit-item{
     display: flex;
@@ -36,4 +34,19 @@
     position: relative;
     border-radius: 12px;
     padding: 8px 0;
+}
+.modal-resource-completion-circle{
+    width : 30px;
+    height : 30px;
+    margin: 0 15px 0 0;
+}
+.modal-unit-completion-circle{
+    width : 20px;
+    height : 20px;
+    margin-right: 25px;
+}
+.modal-unit-completion-circle svg{
+    width: 25px !important;
+    height: 25px !important;
+    padding-left: 5px;
 }

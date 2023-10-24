@@ -4,6 +4,7 @@ import {dummySchedule} from './dummySchedule'
 import { groupScheduleContent } from '../../../../utilities/GroupScheduleContent'
 import Loader from '../../../../utilities/loader/loader'
 import { AiOutlineFieldTime, AiFillCaretRight } from "react-icons/ai";
+import { v4 as uuid } from 'uuid'
 import "./index.css"
 
 export const ScheduleContent = () => {
@@ -15,8 +16,6 @@ export const ScheduleContent = () => {
   const selectedDate = useSelector((state: any) => state.schedule.selectedDate)
   const randomSchedule = Math.floor(Math.random() * dummySchedule.length)
   const res = groupScheduleContent(dummySchedule[randomSchedule])
-  console.log(res)
-
     
   useEffect(()=>{
     setScheduleData(res)
@@ -32,18 +31,17 @@ export const ScheduleContent = () => {
             <>
               <ul className="scheduled-courses-list">
                 {scheduleData.map((courseItem : any) => (
-                <li className='scheduled-course-item' 
+                <li key={uuid()} className='scheduled-course-item' 
                   
                 >
                     <p className='schedule-course-name' style={{backgroundImage: `url(${courseItem.topicsList[0].unitsList[0].gradientImageUrl})`}}>{courseItem.courseName}</p>
-                    {console.log(courseItem)}
                     {
                       courseItem.topicsList.map((topicItem : any) => (
-                        <div className='schedule-topic-item' >
+                        <div key={uuid()} className='schedule-topic-item' >
                           <p className='schedule-topic-name' >{topicItem.topicName}</p>
                           {
                             topicItem.unitsList.map((unitItem: any) => (
-                              <div className='schedule-unit-item'>
+                              <div key={uuid()} className='schedule-unit-item'>
                                 <div>
                                   <p className="schedule-unit-name">{unitItem.unitName}</p>
                                   <div className='schedule-timer-icons-div'>

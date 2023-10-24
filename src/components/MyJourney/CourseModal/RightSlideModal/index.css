@@ -99,8 +99,12 @@
 }
 .course-modal-content{
   height: 100vh;
+  max-height: 1000vh;
   overflow-y: auto;
 }
 .course-modal-content::-webkit-scrollbar{
   display: none;
+}
+.modal-resource-display{
+  padding-bottom: 70px;
 }
