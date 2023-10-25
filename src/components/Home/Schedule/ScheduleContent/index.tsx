@@ -34,7 +34,10 @@ export const ScheduleContent = () => {
                 <li key={uuid()} className='scheduled-course-item' 
                   
                 >
-                    <p className='schedule-course-name' style={{backgroundImage: `url(${courseItem.topicsList[0].unitsList[0].gradientImageUrl})`}}>{courseItem.courseName}</p>
+                  <div className='scheduled-course-item-2' style={{backgroundImage: `url(${courseItem.topicsList[0].unitsList[0].gradientImageUrl})`}}>
+                    <p className='schedule-course-name'>{courseItem.courseName}</p>
+                  </div>
+                    
                     {
                       courseItem.topicsList.map((topicItem : any) => (
                         <div key={uuid()} className='schedule-topic-item' >
