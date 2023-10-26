@@ -3,13 +3,14 @@ import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import { v4 as uuidv4 } from 'uuid';
 import { updateSelectedDate } from '../../../../store/slices/scheduleSlice';
 import { useDispatch } from 'react-redux';
+import CompletionCircle from '../../../../utilities/completionCircle';
 import './index.css'
 
 
 const generateDates = () => {
     const currentDate = new Date("10-10-2023");
     const dateArray = [];
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 1000; i++) {
       dateArray.push(new Date(currentDate));
       currentDate.setDate(currentDate.getDate() + 1);
     }
@@ -24,22 +25,21 @@ const HorizontalCalendar = () => {
   const dateRef : any = useRef(null)
   const dispatch = useDispatch()
 
-  console.log(dates)
-  const generateFutureDate = () => {
-    if ((dates[dates.length -1].getFullYear() < 2010) || dates[dates.length -1].getFullYear() >= 2030){
+  // const generateFutureDate = () => {
+  //   if ((dates[dates.length -1].getFullYear() < 2010) || dates[dates.length -1].getFullYear() >= 2030){
        
-    } else {
-      const currentDate = new Date(dates[dates.length-1].getDate() + 1);
-    const dateArray = [];
-    for (let i = 0; i < 5; i++) {
-      dateArray.push(new Date(currentDate));
-      currentDate.setDate(currentDate.getDate() + 1);
-    }
-    const newDatesArr = [ ...dates, ...dateArray];
-    setDates(newDatesArr)
-    }
+  //   } else {
+  //     const currentDate = new Date(dates[dates.length-2].getDate() + 1);
+  //     const dateArray = [];
+  //     for (let i = 0; i < 50; i++) {
+  //       dateArray.push(new Date(currentDate));
+  //       currentDate.setDate(currentDate.getDate() + 1);
+  //     }
+  //     const newDatesArr = [ ...dates, ...dateArray];
+  //     setDates(newDatesArr)
+  //     }
     
-  }
+  // }
 
 
   const handleLeftArrowClick = () => {
@@ -49,7 +49,7 @@ const HorizontalCalendar = () => {
 
   const handleRightArrowClick = () => {
     setTransform(transform - 200)
-    generateFutureDate()
+    // generateFutureDate()
   };
 
   const handleDayClick = (date : any, index: number) => {
@@ -58,8 +58,6 @@ const HorizontalCalendar = () => {
     
     dispatch(updateSelectedDate(date.toLocaleDateString()))
   };
-
-  console.log(dates)
 
   return (
     <div className="horizontal-calendar">
@@ -77,6 +75,12 @@ const HorizontalCalendar = () => {
               <div className="day-name">{date.toLocaleDateString('en-US', { weekday: 'short' })}</div>
               <div className={`date ${date === selectedDate ? 'selected' : ''}`}>
                   <p>{date.getDate()}</p>
+                  {
+                    (date.getDay()>0) &&
+                      <div className="schedule-completion-circle">
+                        <CompletionCircle availability_status={ "" ? "LOCKED" : ""} completion_percentage={100} />
+                      </div>
+                  }
               </div>
             </button>
           ))}

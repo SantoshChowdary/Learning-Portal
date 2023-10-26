@@ -16,6 +16,8 @@
 }
 .profile-second-section{
     margin-left: 10px;
+    display: flex;
+    align-items: center;
 }
 .profile-name{
     font-family: "Inter";

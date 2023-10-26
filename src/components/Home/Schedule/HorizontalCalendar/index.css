@@ -75,8 +75,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
-  
   .day-name {
     font-size: 11px;
+  }
+  .schedule-completion-circle{
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+  }
+  .schedule-completion-circle svg{
+    width: 15px;
+    height: 15px;
   }

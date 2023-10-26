@@ -4,6 +4,7 @@ import {dummySchedule} from './dummySchedule'
 import { groupScheduleContent } from '../../../../utilities/GroupScheduleContent'
 import Loader from '../../../../utilities/loader/loader'
 import { AiOutlineFieldTime, AiFillCaretRight } from "react-icons/ai";
+import CompletionCircle from '../../../../utilities/completionCircle';
 import { v4 as uuid } from 'uuid'
 import "./index.css"
 
@@ -41,16 +42,25 @@ export const ScheduleContent = () => {
                     {
                       courseItem.topicsList.map((topicItem : any) => (
                         <div key={uuid()} className='schedule-topic-item' >
+                          {/* <div className='modal-resource-completion-circle'>
+                            <CompletionCircle availability_status={topicItem.is_topic_locked ? "LOCKED" : ""} completion_percentage={100} />
+                          </div> */}
                           <p className='schedule-topic-name' >{topicItem.topicName}</p>
                           {
                             topicItem.unitsList.map((unitItem: any) => (
                               <div key={uuid()} className='schedule-unit-item'>
-                                <div>
-                                  <p className="schedule-unit-name">{unitItem.unitName}</p>
-                                  <div className='schedule-timer-icons-div'>
-                                    <AiOutlineFieldTime />
-                                    <span>{Math.floor(unitItem.unitDuration/60)} Mins</span>
+                                <div className="schedule-unit">
+                                  <div className='modal-unit-completion-circle'>
+                                    <CompletionCircle availability_status={unitItem.is_unit_locked ? "LOCKED" : ""} completion_percentage={100} />
                                   </div>
+                                  <div>
+                                  
+                                    <p className="schedule-unit-name">{unitItem.unitName}</p>
+                                    <div className='schedule-timer-icons-div'>
+                                      <AiOutlineFieldTime />
+                                      <span>{Math.floor(unitItem.unitDuration/60)} Mins</span>
+                                    </div>
+                                </div>
                                 </div>
                                 <AiFillCaretRight />
                               </div>

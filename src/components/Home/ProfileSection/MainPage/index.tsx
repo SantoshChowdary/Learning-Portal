@@ -12,8 +12,8 @@ const MainProfileSection = () => {
           <img src="https://media-content.ccbp.in/ccbp_prod/media/profile_pic/edd3cfcb-5b42-42fd-a45d-c4211955291d.jpeg" alt="profile" className='main-profile-image' />
           <div className="profile-second-section">
             <p className="profile-name">Testing</p>
-            <p className='daily-rank'>Daily Rank</p>
-            <p className="profile-date">{todayDate}</p>
+            {/* <p className='daily-rank'>Daily Rank</p> */}
+            {/* <p className="profile-date">{todayDate}</p> */}
           </div>
         </div>
         {/* <div className="coins-section">
