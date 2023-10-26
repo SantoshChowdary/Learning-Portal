@@ -49,7 +49,7 @@
 
 .password-label {
     font-weight: 300;
-    font-size: 12px;
+    font-size: 14px;
     margin: 5px 0 0px 0;
 }
 
@@ -64,7 +64,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 14px;
     color: black;
     font-family: "HkGrotesk";
     margin-top: 10px;
@@ -91,6 +91,6 @@
 
 .trouble-login-form{
     text-align: right;
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 20px;
 }

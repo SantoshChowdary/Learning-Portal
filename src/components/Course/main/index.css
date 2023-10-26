@@ -1,0 +1,32 @@
+.course-section{
+    margin-top: 80px;
+    /* min-height: 100vh; */
+}
+/* .display-main-course{
+    min-width: 90vh;
+} */
+.course-units-side-bar{
+    height: calc(100% - 80px);
+    position: fixed;
+    overflow: hidden;
+    width: 290px;
+    transition: width 0.5s ease 0s;
+    z-index: 100;
+}
+.course-units-side-bar-1{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background-color: rgb(27, 43, 80);
+    z-index: 99;
+    padding: 20px 10px;
+    color: white;
+}
+
+
+.rotated-arrow-icon{
+    transform: rotate(-90deg);
+    font-size: 20px;
+    font-weight: bold;
+}
