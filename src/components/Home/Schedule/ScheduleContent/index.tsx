@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import {dummySchedule} from './dummySchedule'
 import { groupScheduleContent } from '../../../../utilities/GroupScheduleContent'
@@ -48,7 +49,7 @@ export const ScheduleContent = () => {
                           <p className='schedule-topic-name' >{topicItem.topicName}</p>
                           {
                             topicItem.unitsList.map((unitItem: any) => (
-                              <div key={uuid()} className='schedule-unit-item'>
+                              <Link to="/course" key={uuid()} className='schedule-unit-item'>
                                 <div className="schedule-unit">
                                   <div className='modal-unit-completion-circle'>
                                     <CompletionCircle availability_status={unitItem.is_unit_locked ? "LOCKED" : ""} completion_percentage={100} />
@@ -63,7 +64,7 @@ export const ScheduleContent = () => {
                                 </div>
                                 </div>
                                 <AiFillCaretRight />
-                              </div>
+                              </Link>
                             ))
                           }
                         </div>

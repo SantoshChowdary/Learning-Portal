@@ -48,10 +48,22 @@
     padding:  8px 15px;
     border-radius: 12px;
     cursor: pointer;
-    margin: 5px 0;  
+    margin: 5px 0; 
+    position: relative;
 }
+/* .schedule-unit-item::before{
+    content: "";
+    bottom: -19px;
+    position: absolute;
+    width: 2px;
+    z-index: 10;
+    top: 17px;
+    left: 17.5px;
+    background-color: rgb(217, 226, 236);
+    margin-left: 5px;
+} */
 .schedule-unit-item:hover{
-    background-color: rgb(235, 237, 238);
+    background-color: rgb(224, 237, 244);
 }
 .schedule-unit-name{
     font-weight: 500;
