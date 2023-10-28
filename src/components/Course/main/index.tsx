@@ -56,55 +56,60 @@ const CourseSection = () => {
   return (
     <div className="course-section">
         <Header />
-        <div className="display-main-course">
-            <div className="course-units-side-bar" style={{display : shouldDisplaySideMenu ? "block" : "none"}}>
-                <div className={`course-units-side-bar-1 ${sideMenuDisplay}`}>
-                    <div className="course-units-side-bar-2">
-                        <AiOutlineDoubleLeft className="course-back-button" onClick={()=>history.goBack()} />
-                        <p>CONTENTS</p>
-                        <AiOutlineToTop className='rotated-arrow-icon' onClick={setSideMenuDisplayStatus} />
-                    </div>
-                    <ul className='course-modal-units-list'>
-                        {
-                            mainTopicsData.map((topic: any) => (
-                            <li className='course-topic'>
-                                <div className="course-topic-2" onClick={() => setActiveTopicStatus(topic.topic_id)}>
-                                <div className="course-topic-3">
-                                    <div className='resource-completion-circle'>
-                                    <CompletionCircle availability_status={topic.is_topic_locked ? "LOCKED" : ""} completion_percentage={100} />
-                                    </div>
-                                    <p>{topic.topic_name}</p>
-                                </div>
-                                <AiFillCaretRight />
-                                </div>
-                                {
-                                (topic.topic_id === activeTopicTab) ? (
-                                    <div className="course-units-list">
-                                        {
-                                        filteredMainUnitsData.map((unitItem : any) => (
-                                            <div className="course-unit-item">
-                                            <div className='course-unit-completion-circle'>
-                                                <CompletionCircle availability_status={unitItem.is_unit_locked ? "LOCKED" : ""} completion_percentage={unitItem.completion_status === "COMPLETED" ? 100 : 10} />
+        {
+            isCourseResourcesLoaded ? <Loader /> :
+            <div className="display-main-course">
+                <div className="course-units-side-bar" style={{display : shouldDisplaySideMenu ? "block" : "none"}}>
+                    <div className={`course-units-side-bar-1 ${sideMenuDisplay}`}>
+                        <div className="course-units-side-bar-2">
+                            <AiOutlineDoubleLeft className="course-back-button" onClick={()=>history.goBack()} />
+                            <p>CONTENTS</p>
+                            <AiOutlineToTop className='rotated-arrow-icon' onClick={setSideMenuDisplayStatus} />
+                        </div>
+                        <ul className='course-topics-units-list'>
+                            {
+                                mainTopicsData.map((topic: any) => (
+                                <li key={topic.topic_id} className='course-topic-item'>
+                                    <div className={`course-topic-2 ${activeTopicTab===topic.topic_id ? "active-topic" : ""}`} onClick={() => setActiveTopicStatus(topic.topic_id)}>
+                                        <div className="course-topic-3">
+                                            <div className='course-resource-completion-circle'>
                                             </div>
-                                            <span>{unitItem.unit_name}</span>
-                                            </div>
-                                        ))
-                                        }
+                                            <p className='course-topic-name'>{topic.topic_name}</p>
+                                        </div>
+                                        {/* {
+                                            <CompletionCircle availability_status={topic.is_topic_locked ? "LOCKED" : ""} completion_percentage={0} />
+                                        } */}
+                                        <AiFillCaretRight className={`${activeTopicTab===topic.topic_id ? "active-topic-arrow" : ""}`} />
                                     </div>
-                                ) : null
-                                }
-                            </li>
-                            ))
-                        }
-                    </ul>
-                </div> 
-            </div>
-            <div className="course-content-display-section">
-                <div className='course-content-related-section'>
+                                    {
+                                    (topic.topic_id === activeTopicTab) ? (
+                                        <div className="course-units-list">
+                                            {
+                                            filteredMainUnitsData.map((unitItem : any) => (
+                                                <div className="course-unit-item">
+                                                    <div className='course-unit-completion-circle'>
+                                                        <CompletionCircle availability_status={unitItem.is_unit_locked ? "LOCKED" : ""} completion_percentage={unitItem.completion_status === "COMPLETED" ? 100 : 10} />
+                                                    </div>
+                                                    <span>{unitItem.unit_name}</span>
+                                                </div>
+                                            ))
+                                            }
+                                        </div>
+                                    ) : null
+                                    }
+                                </li>
+                                ))
+                            }
+                        </ul>
+                    </div> 
+                </div>
+                <div className="course-content-display-section">
+                    <div className='course-content-related-section'>
 
+                    </div>
                 </div>
             </div>
-        </div>
+        }
     </div>
   )
 }
