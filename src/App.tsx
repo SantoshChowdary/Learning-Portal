@@ -27,6 +27,7 @@ function App(props : any) {
           <ProtectedRoute exact path="/code-snippets" component={Home} />
           <ProtectedRoute exact path="/discussions" component={Home} />
           <ProtectedRoute exact path="/course" component={CourseSection} />
+          {/* <ProtectedRoute exact path="/course&t_id=:t_id&s_id=:s_id" component={CourseSection} /> */}
           <Route path="/not-found" component={Home} />
           <Redirect to="not-found" />
       </Switch>

@@ -3,18 +3,26 @@ import Header from '../../Header/main'
 import { supabase } from '../../../supabase/supabase';
 import { AiOutlineDoubleLeft, AiOutlineToTop } from "react-icons/ai";
 import CompletionCircle from '../../../utilities/completionCircle';
-import { AiFillCaretRight } from "react-icons/ai";
+import { AiFillCaretRight, AiOutlineSend } from "react-icons/ai";
 import Loader from '../../../utilities/loader/loader';
 import { useHistory } from 'react-router-dom';
 import "./index.css"
+import CourseUnitResources from '../CourseResources';
+
+const localTopicId = localStorage.getItem("localTopicID");
+const localUnitId = localStorage.getItem("localUnitID");
 
 const CourseSection = () => {
     const [mainTopicsData, setMainTopicsData] = useState<any>([])
     const [mainUnitsData, setMainUnitsData] = useState<any>([])
-    const [activeTopicTab, setActiveTopicTab] = useState<string>("")
+    const [activeTopicTab, setActiveTopicTab] = useState<string | null>(localTopicId)
+    const [activeUnitId, setActiveUnitId] = useState<string | null>(localUnitId)
     const [isUnitsOpened, setUnitsDisplayStatus] = useState(false)
     const [isCourseResourcesLoaded, setCourseResourceLoadingStatus] = useState(false)
     const [shouldDisplaySideMenu, setDisplaySideMenuStatus] = useState(true)
+    const [activeResourceNames, setActiveResourceNames] = useState({
+        topicName : "", unitName : ""
+    })
     const filteredMainUnitsData: any = mainUnitsData.filter((unit: any) => unit.parent_id === activeTopicTab)
     const history = useHistory();
 
@@ -43,15 +51,27 @@ const CourseSection = () => {
           setActiveTopicTab("")
         } else {
           setActiveTopicTab(topicId)
+          localStorage.setItem("localTopicID", JSON.stringify(topicId))
           setUnitsDisplayStatus(!isUnitsOpened)
         }
+      }
+
+      const setActiveUnitStatues = (unitId : string, unitAvailabilityStatus : string, unitName : string, topicName: string) => {
+        if(unitAvailabilityStatus === "LOCKED"){
+            setActiveUnitId("")
+        } else {
+            setActiveUnitId(unitId)
+            localStorage.setItem("localUnitID", JSON.stringify(unitId))
+            setActiveResourceNames({topicName : topicName, unitName : unitName})
+        }
+        
       }
 
       const setSideMenuDisplayStatus = () => {
         setDisplaySideMenuStatus(!shouldDisplaySideMenu)
       }
 
-      const sideMenuDisplay = shouldDisplaySideMenu ? "" : "hide-side-menu"
+      const sideMenuDisplay = shouldDisplaySideMenu ? "" : "hide-side-menu";
 
   return (
     <div className="course-section">
@@ -86,7 +106,7 @@ const CourseSection = () => {
                                         <div className="course-units-list">
                                             {
                                             filteredMainUnitsData.map((unitItem : any) => (
-                                                <div className="course-unit-item">
+                                                <div className={`course-unit-item ${unitItem.unit_id===activeUnitId ? "active-unit-item" : ""}`} onClick={()=>setActiveUnitStatues(unitItem.unit_id, unitItem.is_unit_locked, unitItem.unit_name, topic.topic_name)}>
                                                     <div className='course-unit-completion-circle'>
                                                         <CompletionCircle availability_status={unitItem.is_unit_locked ? "LOCKED" : ""} completion_percentage={unitItem.completion_status === "COMPLETED" ? 100 : 10} />
                                                     </div>
@@ -103,10 +123,14 @@ const CourseSection = () => {
                         </ul>
                     </div> 
                 </div>
-                <div className="course-content-display-section">
+                <div className="course-content-display-section" style={{marginLeft : shouldDisplaySideMenu ? "300px": "0px"}}>
                     <div className='course-content-related-section'>
-
+                        {
+                            shouldDisplaySideMenu ? null : <AiOutlineSend className="display-side-menu-icon" style={{display : shouldDisplaySideMenu ? "none" : "block"}} onClick={()=>setDisplaySideMenuStatus(!shouldDisplaySideMenu)}  />
+                        }
+                        <p> {activeResourceNames.topicName} - {activeResourceNames.unitName}</p>
                     </div>
+                    <CourseUnitResources activeUnitId={activeUnitId} />
                 </div>
             </div>
         }

@@ -1,0 +1,8 @@
+.course-unit-content{
+    width: 80%;
+    height: 100%;
+    overflow: auto;
+    padding: 30px;
+    text-align: center;
+    z-index: -1;
+}
