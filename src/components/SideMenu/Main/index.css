@@ -1,0 +1,18 @@
+.main-homepage-section{
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: #0F172A;
+    margin: 0;
+}
+.main-home-side-section{
+    max-width: 256px;
+}
+@media screen and (max-width: 692px) {
+    .main-home-side-section{
+        display: none;
+        max-width: 0;
+    }
+    .main-homepage-section{
+        display: none;
+    }
+}

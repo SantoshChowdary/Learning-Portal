@@ -20,7 +20,6 @@ const RightSlideModal = ({ isOpen, onClose, courseDetails } : any) => {
     setActiveModalTab(index)
   }
 
-  console.log(isOpen)
   useEffect(()=> {
     const handleClickOutside = (event : React.MouseEvent) => {
       if(modalRef.current && !modalRef.current.contains(event.target)){

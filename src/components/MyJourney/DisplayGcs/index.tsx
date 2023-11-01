@@ -10,14 +10,14 @@ const DisplayGCs = (props : any) => {
     const endDate = new Date(end_datetime);
     const sD = startDate.getDate() + "-" + (startDate.getMonth()+1) + "-" + startDate.getFullYear()
     const eD = endDate.getDate() + "-" + (endDate.getMonth()+1) + "-" + endDate.getFullYear()
-    const headingColors = ["green", "blue", "orange"] 
+    const headingColors = ["green", "skyblue", "orange"] 
     const gcColor = Math.floor(Math.random()*3)
 
   return (
     <li className="growth-cycle-display">
         <div className='gc-display-section-1'>
             <div className="gc-display-section-2">
-                <h4 style={{color: headingColors[gcColor]}}>{growth_cycle_name}</h4>
+                <h4 style={{color: "green"}}>{growth_cycle_name}</h4>
                 <span>( {sD} to {eD} ) - {total_days_count} days</span>
             </div>
             <div className='percentage-display-div'>

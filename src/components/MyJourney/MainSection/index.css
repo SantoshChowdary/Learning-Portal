@@ -14,4 +14,27 @@
 }
 .my-journey-gcs{
     margin: 30px 20px;
+    padding: 0;
+}
+@media screen and (max-width : 1024px) {
+    .my-journey-section{
+        padding : 40px 30px;
+    }
+    .my-journey-gcs{
+        margin: 30px 0px;
+        padding: 0;
+    }
+}
+@media screen and (max-width: 692px) {
+    .my-journey-section{
+        border-top-left-radius: 0;
+        border-bottom-left-radius:  0;
+        margin-left: -100vw;
+        width: 100vw;
+        padding : 20px;
+    }
+    .my-journey-gcs{
+        margin:  10px;
+        padding: 0;
+    }
 }

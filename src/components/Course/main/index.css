@@ -6,26 +6,30 @@
     position: fixed;
     overflow: hidden;
     width: 300px;
-    z-index: 100;
+    max-width: 300px;
+    z-index: 1000;
     user-select: none;
+    transition: max-width 0.4s;
 }
 .course-units-side-bar-1{
     width: 100%;
     height: 100%;
+    max-width: 100%;
     overflow-y: auto;
     background-color: rgb(27, 43, 80);
     z-index: 99;
     color: white;
     position: relative;
     left: 0;
-    transition: left 0.3s ease-in;
+    transition: max-width 0.3s ease-in;
 }
 .course-units-side-bar-1::-webkit-scrollbar{
     display: none;
 }
 .hide-side-menu{
     left: -300px;
-    transition: left 0.5s ease-in;
+    max-width: 100%;
+    transition: max-width 1s;
 }
 
 .course-units-side-bar-2{
@@ -109,7 +113,18 @@
 .course-content-display-section{
     width: 100% - 300px;
     height: 100vh - 80px;
+    min-height: 100vh - 80px;
     margin-left: 300px;
+    position: relative;
+    z-index: 100;
+    overflow: auto;
+    transition: margin-left 0.5s;
+}
+.course-content-display-section-2{
+    z-index: 99;
+    position: relative;
+    /* overflow-y: auto; */
+    height: 100%;
 }
 .course-content-related-section{
     width: 100%;

@@ -8,7 +8,7 @@ import './index.css'
 
 
 const generateDates = () => {
-    const currentDate = new Date("10-10-2023");
+    const currentDate = new Date("08-10-2023");
     const dateArray = [];
     for (let i = 0; i < 1000; i++) {
       dateArray.push(new Date(currentDate));
@@ -21,8 +21,8 @@ const generateDates = () => {
 const HorizontalCalendar = () => {
   const [dates, setDates] = useState(generateDates())
   const [selectedDate, setSelectedDate] = useState( new Date() )
-  const [transform, setTransform] = useState(0)
-  const dateRef : any = useRef(null)
+  const [transform, setTransform] = useState(0) 
+  const dateRef: any = useRef(null)
   const dispatch = useDispatch()
 
   // const generateFutureDate = () => {
@@ -44,20 +44,25 @@ const HorizontalCalendar = () => {
 
   const handleLeftArrowClick = () => {
     setTransform(transform + 200)
-    // generatePastDates()
   };
 
   const handleRightArrowClick = () => {
     setTransform(transform - 200)
-    // generateFutureDate()
   };
 
   const handleDayClick = (date : any, index: number) => {
     setSelectedDate(date);
-    setTransform(transform - 100)
-    
     dispatch(updateSelectedDate(date.toLocaleDateString()))
+    
+    const dRef = document.getElementById(index.toString())
+    // console.log(dateRef.current.scrollIntoView())
+    dRef?.scrollIntoView({
+      behavior: "smooth",
+      inline: "center"
+    })
   };
+
+  
 
   return (
     <div className="horizontal-calendar">
@@ -67,6 +72,7 @@ const HorizontalCalendar = () => {
           {dates.map((date :any, index:number) => (
             <button
               key={uuidv4()}
+              id={index.toString()}
               className="day"
               ref={dateRef}
               onClick={() => handleDayClick(date, index)}

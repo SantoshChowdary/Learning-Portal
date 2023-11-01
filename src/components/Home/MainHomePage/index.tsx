@@ -1,5 +1,5 @@
 import React from 'react'
-import SideMenu from '../../SideMenu/SideBar'
+import SideMenu from '../../SideMenu/Main'
 import MainProfileSection from '../ProfileSection/MainPage'
 import MainSchedule from '../Schedule/Main'
 import './index.css'

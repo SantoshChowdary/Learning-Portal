@@ -30,14 +30,14 @@ const CourseSection = () => {
         const {data, error} : any = await supabase.from("topics").select();
         if (data?.length !== 0){
             setCourseResourceLoadingStatus(false)
-            setMainTopicsData(data)
+            setMainTopicsData(data.sort((a : any,b : any) => a.topic_order-b.topic_order))
         }
       }
     
       const getUnitsData = async () => {
         const {data, error} : any = await supabase.from("units").select();
         if (data?.length !== 0){
-            setMainUnitsData(data)
+            setMainUnitsData(data.sort((a : any,b : any) => a.unit_order-b.unit_order))
         }
       }
     
@@ -72,6 +72,7 @@ const CourseSection = () => {
       }
 
       const sideMenuDisplay = shouldDisplaySideMenu ? "" : "hide-side-menu";
+      const currentUnit = mainUnitsData.find((item : any)=> item.unit_id===activeUnitId)
 
   return (
     <div className="course-section">
@@ -124,13 +125,15 @@ const CourseSection = () => {
                     </div> 
                 </div>
                 <div className="course-content-display-section" style={{marginLeft : shouldDisplaySideMenu ? "300px": "0px"}}>
-                    <div className='course-content-related-section'>
-                        {
-                            shouldDisplaySideMenu ? null : <AiOutlineSend className="display-side-menu-icon" style={{display : shouldDisplaySideMenu ? "none" : "block"}} onClick={()=>setDisplaySideMenuStatus(!shouldDisplaySideMenu)}  />
-                        }
-                        <p> {activeResourceNames.topicName} - {activeResourceNames.unitName}</p>
+                    <div className="course-content-display-section-2">
+                        <div className='course-content-related-section'>
+                            {
+                                shouldDisplaySideMenu ? null : <AiOutlineSend className="display-side-menu-icon" style={{display : shouldDisplaySideMenu ? "none" : "block"}} onClick={()=>setDisplaySideMenuStatus(!shouldDisplaySideMenu)}  />
+                            }
+                            <p> {activeResourceNames.topicName} - {activeResourceNames.unitName}</p>
+                        </div>
+                        <CourseUnitResources currentUnit={currentUnit} />
                     </div>
-                    <CourseUnitResources activeUnitId={activeUnitId} />
                 </div>
             </div>
         }

@@ -21,3 +21,23 @@
     overflow: hidden;
     padding: 20px;
 }
+@media screen and (max-width : 1023px) {
+    .home-page-profile-section{
+        display: none;
+    }
+    .daily-schedule-page{
+        max-width: calc(100vw);
+    }
+}
+
+@media screen and (max-width : 692px) {
+    .daily-schedule-page{
+        width: 100vw;
+    }
+    .homepage-section{
+        width: 100vw;
+        margin-left: calc(-100vw);
+        border-top-left-radius: 0;
+        border-bottom-left-radius:  0;
+    }
+}

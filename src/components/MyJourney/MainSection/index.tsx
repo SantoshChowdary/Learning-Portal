@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import SideMenu from '../../SideMenu/SideBar'
+import SideMenu from '../../SideMenu/Main'
 import { supabase } from '../../../supabase/supabase'
 import DisplayGCs from '../DisplayGcs'
 import Loader from '../../../utilities/loader/loader'

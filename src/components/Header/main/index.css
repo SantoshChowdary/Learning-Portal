@@ -8,6 +8,7 @@
     box-shadow: rgba(31, 45, 61, 0.15) 0px 0px 2px 2px;
     position: fixed;
     top: 0;
+    z-index: 1036;
 }
 .nxtwave-header-logo{
     width: 75px;

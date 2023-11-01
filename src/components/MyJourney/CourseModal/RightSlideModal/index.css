@@ -1,13 +1,13 @@
 .right-slide-modal {
     position: fixed;
     top: 0;
-    right: -624px; 
+    right: -630px; 
     min-height: 100vh;
     /* height: 100vh; */
     width: 624px;
     background-color: #f1f5f9;
     box-shadow: -2px 0 5px rgba(63, 62, 62, 0.5);
-    transition: right 0.2s ease-out;
+    transition: right 0.4s ease-out;
     z-index: 200;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -17,7 +17,7 @@
 .right-slide-modal.open-slide {
   right: 0;
   display: block;
-  transition: right 0.2s ease-out;
+  transition: right 0.4s ease-out;
 }
 .modal-content {
   padding: 20px;
@@ -108,4 +108,11 @@
 }
 .modal-resource-display{
   padding-bottom: 70px;
+}
+
+@media screen and (max-width : 1024px) {
+  .right-slide-modal{
+    width: 100%;
+    right: -102vw;
+  }
 }
