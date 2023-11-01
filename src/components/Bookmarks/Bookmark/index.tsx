@@ -20,7 +20,7 @@ const Bookmark = (props : any) => {
 
   return (
     <div className="single-bookmark-section">
-        <Link to="/" className="bookmark-data-div">
+        <Link to="/course" className="bookmark-data-div">
             <p className="bookmark-unit-name">{unit_name}</p>
             <p className="bookmark-unit-name bookmark-parent-name">{course_name} - {topic_name}</p>
             <p style={{color: completionColor}} className="unit-status-display">{unitCompletionStatus}</p>

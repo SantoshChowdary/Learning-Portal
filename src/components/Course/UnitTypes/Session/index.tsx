@@ -1,8 +1,17 @@
 import React from 'react'
+import ReactPlayer from 'react-player/lazy'
+import './index.css'
+
 
 export const VideoSession = (props: any) => {
+  const videoURL = 'https://youtu.be/YE7VzlLtp-4';
+
   return (
-    <div>VideoSession</div>
+    <div className="video-section">
+      <div className='react-video-player'>
+        <ReactPlayer url={videoURL} controls width="90%" height="90%" />
+      </div>
+    </div>
   )
 }
 export default VideoSession

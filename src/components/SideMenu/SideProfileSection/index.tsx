@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { logOutUserFromSite } from '../../../store/slices/userSlice';
 import { BsPersonCheck, BsPauseFill, BsXOctagon, BsFillCaretRightFill } from "react-icons/bs";
 
@@ -11,6 +11,7 @@ export const ProfileSection = () => {
   const [profileModalStatus, setProfileModalStatus] = useState(false)
   const userData = useSelector((state : any) => state.user.userData)
   const dispatch = useDispatch()
+  const history = useHistory()
   const user_name = "testing"
   const profileModalDisplayStatus = profileModalStatus ? "block" : "none"
 
@@ -20,6 +21,8 @@ export const ProfileSection = () => {
 
   const getLogOutUser = () => {
     dispatch(logOutUserFromSite(false))
+    history.replace("/login")
+
   }
 
   return (
