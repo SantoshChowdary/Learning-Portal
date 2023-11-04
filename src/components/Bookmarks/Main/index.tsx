@@ -18,6 +18,7 @@ const Bookmarks = () => {
             setBookmarksLoadingStatus(true)
           } else {
             setBookmarksData(data)
+            console.table(data)
             setBookmarksLoadingStatus(false)
           }
     }

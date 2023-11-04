@@ -9,7 +9,7 @@ export const VideoSession = (props: any) => {
   return (
     <div className="video-section">
       <div className='react-video-player'>
-        <ReactPlayer url={videoURL} controls width="90%" height="90%" />
+        <ReactPlayer url={videoURL} controls width="80%" height="90%" />
       </div>
     </div>
   )

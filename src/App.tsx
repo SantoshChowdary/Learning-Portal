@@ -10,6 +10,7 @@ import MyJourney from './components/MyJourney/MainSection';
 import OtherCourses from './components/OtherCourses/Main';
 import Bookmarks from './components/Bookmarks/Main';
 import CourseSection from './components/Course/main';
+import ReactAceEditor from './components/codeEditor/AceEditor';
 import './App.css';
 
 
@@ -19,11 +20,11 @@ function App(props : any) {
       <Switch>
           <Route exact path="/login" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
-          <ProtectedRoute exact path="/" component={Home} />
+          <ProtectedRoute exact path="/" component={ReactAceEditor} />
           <ProtectedRoute exact path="/my-journey" component={MyJourney} />
           <ProtectedRoute exact path="/other-courses" component={OtherCourses} />
           <ProtectedRoute exact path="/bookmarks" component={Bookmarks} />
-          <ProtectedRoute exact path="/playground" component={CourseSection} />
+          <ProtectedRoute exact path="/playground" component={Home} />
           <ProtectedRoute exact path="/code-snippets" component={Home} />
           <ProtectedRoute exact path="/discussions" component={Home} />
           <ProtectedRoute exact path="/course" component={CourseSection} />

@@ -124,7 +124,7 @@ const CourseSection = () => {
                         </ul>
                     </div> 
                 </div>
-                <div className="course-content-display-section" style={{marginLeft : shouldDisplaySideMenu ? "300px": "0px"}}>
+                <div className="course-content-display-section" style={{marginLeft : shouldDisplaySideMenu ? "300px": "0px", width: "100vw"}}>
                     <div className="course-content-display-section-2">
                         <div className='course-content-related-section'>
                             {

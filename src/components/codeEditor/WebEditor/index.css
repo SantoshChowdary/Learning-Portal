@@ -1,0 +1,45 @@
+.main-web-code-editor{
+    display: flex;
+    max-width: 60vw;
+    width: 60vw;
+    min-width: 20vw;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+    background-color: black;
+}
+/* .web-code-editor{
+    width: inherit;
+} */
+.web-code-editor-header{
+    margin: 0;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.web-code-languages-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.web-editor-tab{
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+    cursor: pointer;
+}
+.selected-web-tab{
+    background-color: rgb(94, 93, 93);
+}
+.web-code-editor span{
+    font-size: 14px;
+    padding-left: 5px;
+}
+.react-ace-web-editor{
+    max-width: 60vw;
+    width: 60vw;
+    min-width: 20vw;
+    height: calc(100vh - 120px);
+}
