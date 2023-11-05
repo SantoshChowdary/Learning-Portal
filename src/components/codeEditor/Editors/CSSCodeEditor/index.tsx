@@ -8,8 +8,14 @@ import "ace-builds/src-noconflict/ext-language_tools";
 import "./index.css"
 
 
-const CSSCodeEditor = () => {
-  const [defaultCssCode, setCssCode] = useState("")
+const CSSCodeEditor = (props: any) => {
+  const {onChangeCssCode, code} = props;
+  const [defaultCssCode, setCssCode] = useState(code)
+
+  const changeCssCode = (value : string) => {
+    onChangeCssCode(value);
+    setCssCode(value)
+  }
 
   return (
     <AceEditor
@@ -17,12 +23,12 @@ const CSSCodeEditor = () => {
       theme="monokai"
       name="css"
       className='css-web-editor'
-      onChange={(value) => setCssCode(value)}
+      onChange={(value) => changeCssCode(value)}
       fontSize={15}
       value={defaultCssCode}
-      showPrintMargin={true}
+      showPrintMargin={false}
       showGutter={true}
-      highlightActiveLine={true}
+      highlightActiveLine={false}
       setOptions={{
       useWorker : false,
       enableBasicAutocompletion: true,

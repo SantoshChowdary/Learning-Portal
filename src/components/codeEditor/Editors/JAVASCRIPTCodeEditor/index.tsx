@@ -8,7 +8,13 @@ import "ace-builds/src-noconflict/ext-language_tools";
 import "./index.css"
 
 const JAVASCRIPTCodeEditor = (props : any) => {
-  const [defaultJSCode, setJSCode] = useState("")
+  const {onChangeJsCode, code} = props;
+  const [defaultJSCode, setJSCode] = useState(code)
+
+  const changeJsCode = (value : string) => {
+    onChangeJsCode(value);
+    setJSCode(value)
+  }
 
   return (
     <AceEditor
@@ -16,12 +22,12 @@ const JAVASCRIPTCodeEditor = (props : any) => {
       theme="monokai"
       name="javascript"
       className='javascript-web-editor'
-      onChange={(value) => setJSCode(value)}
+      onChange={(value) => changeJsCode(value)}
       fontSize={15}
       value={defaultJSCode}
-      showPrintMargin={true}
+      showPrintMargin={false}
       showGutter={true}
-      highlightActiveLine={true}
+      highlightActiveLine={false}
       setOptions={{
       useWorker : false,
       enableBasicAutocompletion: true,

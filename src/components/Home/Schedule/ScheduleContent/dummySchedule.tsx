@@ -7,7 +7,7 @@ export const dummySchedule = [
             "topics": [
               {
                 "topic_id": "9a78b3ad-9530-4507-945f-c9aab392d38c",
-                "topic_name": "Introduction",
+                "topic_name": "Dummy Topic",
                 "courses": [
                   {
                     "course_id": "55e2d89a-58de-4997-8a45-152bf8cce013",
@@ -43,7 +43,7 @@ export const dummySchedule = [
             "topics": [
               {
                 "topic_id": "2a1f268b-291a-4396-9a94-9e77a2bee3f7",
-                "topic_name": "Learning Portal Tour - Laptop",
+                "topic_name": "Dummy Topic",
                 "courses": [
                   {
                     "course_id": "55e2d89a-58de-4997-8a45-152bf8cce013",
@@ -79,7 +79,7 @@ export const dummySchedule = [
             "topics": [
               {
                 "topic_id": "2a1f268b-291a-4396-9a94-9e77a2bee3f7",
-                "topic_name": "Learning Portal Tour - Laptop",
+                "topic_name": "Dummy Topic",
                 "courses": [
                   {
                     "course_id": "55e2d89a-58de-4997-8a45-152bf8cce013",
@@ -115,7 +115,7 @@ export const dummySchedule = [
             "topics": [
               {
                 "topic_id": "2a1f268b-291a-4396-9a94-9e77a2bee3f7",
-                "topic_name": "Learning Portal Tour - Laptop",
+                "topic_name": "Dummy Topic",
                 "courses": [
                   {
                     "course_id": "55e2d89a-58de-4997-8a45-152bf8cce013",
@@ -1241,7 +1241,7 @@ export const dummySchedule = [
           "topics": [
             {
               "topic_id": "50c56048-e554-43fb-b8d2-74eda659db32",
-              "topic_name": "CSS Flexbox",
+              "topic_name": "Dummy Topic",
               "courses": [
                 {
                   "course_id": "80afae69-e9c6-4c29-ab24-ea4495213e9f",
@@ -1277,7 +1277,7 @@ export const dummySchedule = [
           "topics": [
             {
               "topic_id": "50c56048-e554-43fb-b8d2-74eda659db32",
-              "topic_name": "CSS Flexbox",
+              "topic_name": "Dummy Topic",
               "courses": [
                 {
                   "course_id": "80afae69-e9c6-4c29-ab24-ea4495213e9f",
@@ -1313,7 +1313,7 @@ export const dummySchedule = [
           "topics": [
             {
               "topic_id": "50c56048-e554-43fb-b8d2-74eda659db32",
-              "topic_name": "CSS Flexbox",
+              "topic_name": "Dummy Topic",
               "courses": [
                 {
                   "course_id": "80afae69-e9c6-4c29-ab24-ea4495213e9f",
@@ -1349,7 +1349,7 @@ export const dummySchedule = [
           "topics": [
             {
               "topic_id": "50c56048-e554-43fb-b8d2-74eda659db32",
-              "topic_name": "CSS Flexbox",
+              "topic_name": "Dummy Topic",
               "courses": [
                 {
                   "course_id": "80afae69-e9c6-4c29-ab24-ea4495213e9f",
@@ -1385,7 +1385,7 @@ export const dummySchedule = [
           "topics": [
             {
               "topic_id": "50c56048-e554-43fb-b8d2-74eda659db32",
-              "topic_name": "CSS Flexbox",
+              "topic_name": "Dummy Topic",
               "courses": [
                 {
                   "course_id": "80afae69-e9c6-4c29-ab24-ea4495213e9f",
@@ -1421,7 +1421,7 @@ export const dummySchedule = [
           "topics": [
             {
               "topic_id": "3f5a6b5f-4d0f-4d79-8625-a793fbab5e39",
-              "topic_name": "Mock Tests",
+              "topic_name": "Dummy Topic",
               "courses": [
                 {
                   "course_id": "3a622a3c-cb84-4394-a2d7-2f99eac9c266",
@@ -1457,7 +1457,7 @@ export const dummySchedule = [
           "topics": [
             {
               "topic_id": "3f5a6b5f-4d0f-4d79-8625-a793fbab5e39",
-              "topic_name": "Mock Tests",
+              "topic_name": "Dummy Topic",
               "courses": [
                 {
                   "course_id": "3a622a3c-cb84-4394-a2d7-2f99eac9c266",
@@ -1495,7 +1495,7 @@ export const dummySchedule = [
           "topics": [
             {
               "topic_id": "7f553143-459d-43df-a3fb-4749ed732353",
-              "topic_name": "Miscellaneous Topics",
+              "topic_name": "Dummy Topic",
               "courses": [
                 {
                   "course_id": "a6454e48-d030-4d49-8920-253198052232",
@@ -1531,7 +1531,7 @@ export const dummySchedule = [
           "topics": [
             {
               "topic_id": "7f553143-459d-43df-a3fb-4749ed732353",
-              "topic_name": "Miscellaneous Topics",
+              "topic_name": "Dummy Topic",
               "courses": [
                 {
                   "course_id": "a6454e48-d030-4d49-8920-253198052232",
@@ -1567,7 +1567,7 @@ export const dummySchedule = [
           "topics": [
             {
               "topic_id": "7f553143-459d-43df-a3fb-4749ed732353",
-              "topic_name": "Miscellaneous Topics",
+              "topic_name": "Dummy Topic",
               "courses": [
                 {
                   "course_id": "a6454e48-d030-4d49-8920-253198052232",
@@ -1603,7 +1603,7 @@ export const dummySchedule = [
           "topics": [
             {
               "topic_id": "f338275f-3195-4a54-9a91-a527d1c739b2",
-              "topic_name": "Problem-Solving",
+              "topic_name": "Dummy Topic",
               "courses": [
                 {
                   "course_id": "a6454e48-d030-4d49-8920-253198052232",
@@ -1635,3 +1635,5 @@ export const dummySchedule = [
       }
     ]
 ];
+
+

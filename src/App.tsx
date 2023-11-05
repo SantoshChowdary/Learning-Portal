@@ -2,6 +2,7 @@ import React from 'react';
 import {BrowserRouter} from 'react-router-dom'
 import {Switch, Route, Redirect} from 'react-router'
 
+import OfflineWarning from './utilities/offlineWarning';
 import SignIn from './components/Login/SignInSection';
 import SignUp from './components/Login/SignUpSection';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
@@ -14,17 +15,23 @@ import ReactAceEditor from './components/codeEditor/AceEditor';
 import './App.css';
 
 
-function App(props : any) { 
+function App(props : any) {
+  const isOnLine = navigator.onLine;
+
+  if(!isOnLine) {
+    return <OfflineWarning />
+  }
+
   return (
     <BrowserRouter>
       <Switch>
           <Route exact path="/login" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
-          <ProtectedRoute exact path="/" component={ReactAceEditor} />
+          <ProtectedRoute exact path="/" component={Home} />
           <ProtectedRoute exact path="/my-journey" component={MyJourney} />
           <ProtectedRoute exact path="/other-courses" component={OtherCourses} />
           <ProtectedRoute exact path="/bookmarks" component={Bookmarks} />
-          <ProtectedRoute exact path="/playground" component={Home} />
+          <ProtectedRoute exact path="/playground" component={ReactAceEditor} />
           <ProtectedRoute exact path="/code-snippets" component={Home} />
           <ProtectedRoute exact path="/discussions" component={Home} />
           <ProtectedRoute exact path="/course" component={CourseSection} />

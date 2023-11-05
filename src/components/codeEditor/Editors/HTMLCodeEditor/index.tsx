@@ -7,17 +7,16 @@ import "ace-builds/src-noconflict/ext-language_tools";
 
 import "./index.css"
 
-const defaultCode = `<!DOCTYPE html>
-<html>
-  <head></head>
-  <body>
-    Your code goes here
-  </body>
-</html>
-`
+
 
 const HTMLCodeEditor = (props : any) => {
-  const [defaultHtmlCode, setHTMLCode] = useState(defaultCode)
+  const {onChangeHtmlCode, code} = props;
+  const [defaultHtmlCode, setHTMLCode] = useState(code)
+
+  const changeHtmlCode = (value : string) => {
+    onChangeHtmlCode(value);
+    setHTMLCode(value)
+  }
 
   return (
     <AceEditor
@@ -25,12 +24,12 @@ const HTMLCodeEditor = (props : any) => {
       theme="monokai"
       name="html"
       className='html-web-editor'
-      onChange={(value) => setHTMLCode(value)}
+      onChange={(value) => changeHtmlCode(value)}
       fontSize={15}
       value={defaultHtmlCode}
-      showPrintMargin={true}
+      showPrintMargin={false}
       showGutter={true}
-      highlightActiveLine={true}
+      highlightActiveLine={false}
       setOptions={{
       useWorker : false,
       enableBasicAutocompletion: true,

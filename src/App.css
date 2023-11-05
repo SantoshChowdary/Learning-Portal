@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     scroll-behavior: smooth;
-    font-family: "Inter" !important;
+    /* font-family: "Inter" !important; */
 }
 a{
     text-decoration: none !important;

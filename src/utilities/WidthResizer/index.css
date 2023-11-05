@@ -1,0 +1,15 @@
+.window-resizer{
+    width: 20px;
+    height: 100%;
+    background-color: rgb(43, 37, 37);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: e-resize;
+}
+.window-resizer span{
+    color: white;
+    margin: 0;
+}
