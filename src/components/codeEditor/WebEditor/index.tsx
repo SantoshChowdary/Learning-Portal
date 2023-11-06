@@ -57,7 +57,7 @@ const WebCodeEditor = () => {
 
    
     return (
-        <div className="main-web-code-editor">
+        <div className="main-web-code-editor" id="main-web-code-editor">
             <div className="web-code-editor" id="web-code-editor">
                 <div className="web-code-editor-header">
                     <div className="web-code-languages-div">
@@ -79,7 +79,7 @@ const WebCodeEditor = () => {
             </div>
             <WidthResizer />
             <div className='web-output-display' id="web-output-display">
-                <iframe id="web-out-iframe" title="web-out-iframe" srcDoc={iFrameCode} width="99%" height="99%" />
+                <iframe id="web-out-iframe" title="web-out-iframe" srcDoc={iFrameCode} />
             </div>
         </div>
     )

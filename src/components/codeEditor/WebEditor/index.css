@@ -8,6 +8,8 @@
     width: 60vw;
     max-width: 60vw;
     min-width: 20vw;
+    transition: max-width 3s ease-in;
+    transition: min-width 3s ease-in;
     background-color: rgb(40, 43, 57);
 }
 .web-code-editor-header{
@@ -40,18 +42,20 @@
     max-width: 60vw;
     width: 60vw;
     min-width: 20vw;
-    height: calc(100vh - 120px);
 }
 .ace_gutter{
     background-color: rgb(4, 4, 4) !important;
 }
 .web-output-display{
-    width: 40vw;
-    height: inherit;
+    /* height: inherit; */
     max-width: 60vw;
+    width: 40vw;
     min-width: 20vw;
+    transition: max-width 0.2s ease-in;
+    transition: min-width 0.2s ease-in;
+    height: calc(100vh - 80px);
 }
-.web-output-display iframe{
+#web-out-iframe{
     border: none;
 }
 .ace_print-margin{
