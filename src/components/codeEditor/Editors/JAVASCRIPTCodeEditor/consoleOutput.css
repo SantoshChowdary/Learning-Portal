@@ -1,0 +1,16 @@
+.react-ace-js-editor{
+    height: calc(100vh - 80px);
+    margin-top: 80px;
+    width: 100vw;
+    display: flex;
+}
+.js-code-editor{
+    max-width: 70vw;
+    width: 70vw;
+    min-width: 30vw;
+    height: inherit;
+}
+.console-output{
+    /* max-width: 70vw; */
+    min-width: 30vw;
+}

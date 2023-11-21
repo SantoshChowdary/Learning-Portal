@@ -41,7 +41,7 @@ const MyJourney = (props : any) => {
           {
             isLoadingMyJourneyData ? <Loader /> : 
             <>
-              <h1>My Journey</h1>
+              <p className='my-journey-heading'>My Journey</p>
               <ul className="my-journey-gcs">
                 {
                   myJourneyGCsData.map( (growthCycleData : any) => (

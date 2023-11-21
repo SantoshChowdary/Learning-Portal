@@ -5,13 +5,13 @@ import {addUserToDB,updateUserLoggedStatus} from '../../../store/slices/userSlic
 import { BiArrowBack } from "react-icons/bi";
 import { PhoneNumberValidator } from '../../../utilities/phoneNumberValidator';
 import {supabase} from '../../../supabase/supabase'
-
+import { signUpObject } from '../../../types/login';
 
 import './index.css'
 import '../SignInSection/main.css'
 
 const SignUp = (props: any) => {
-    const [newUserData, setNewUserData] = useState({
+    const [newUserData, setNewUserData] = useState<signUpObject>({
         userName : "",
         phoneNumber : "",
         email : "",
@@ -22,7 +22,7 @@ const SignUp = (props: any) => {
     const dispatch = useDispatch()
     // const useSelect = useSelector((state: any) => state.user.userData)
 
-    const changeTNCStatus = (e : React.ChangeEvent<HTMLInputElement>) => {
+    const changeTNCStatus = (e : React.ChangeEvent<HTMLInputElement>) : void => {
         if (e.target.checked){
             setTNCStatus(true)
         } else {
@@ -36,9 +36,9 @@ const SignUp = (props: any) => {
             return false
         } return true
     }
-    const verifyButtonStatus = verifyButtonDisable()
+    const verifyButtonStatus : boolean = verifyButtonDisable()
 
-    const submitUserDetails = async (e : React.ChangeEvent<HTMLFormElement>) => {
+    const submitUserDetails = async (e : React.ChangeEvent<HTMLFormElement>) : Promise<void> => {
         e.preventDefault()
 
         const {error} = await supabase.from("user_authentication").insert({

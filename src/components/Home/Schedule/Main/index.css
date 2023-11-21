@@ -21,8 +21,8 @@
     overflow: hidden auto;
     user-select: none;
     height:85vh;
-    max-height: 1000vh;
-    margin: 10px 0;
+    /* max-height: 1000vh; */
+    margin: 10px 0 0 0;
 }
 .main-schedule-content-section::-webkit-scrollbar{
     background: rgb(202, 202, 202);

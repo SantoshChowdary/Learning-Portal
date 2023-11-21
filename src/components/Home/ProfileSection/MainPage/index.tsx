@@ -3,8 +3,8 @@ import './index.css'
 
 const MainProfileSection = () => {
 
-  const d = new Date()
-  const todayDate = d.getDate() + "-" + (d.getMonth()+1) + "-" + d.getFullYear()
+  const d : Date = new Date()
+  const todayDate: string = d.getDate() + "-" + (d.getMonth()+1) + "-" + d.getFullYear()
 
   return (
     <div className="main-profile-section">

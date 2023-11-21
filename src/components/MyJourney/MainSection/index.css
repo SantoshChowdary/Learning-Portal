@@ -2,7 +2,7 @@
     display: flex;
 }
 .my-journey-section{
-    background-color: rgb(226, 238, 245);
+    background-color: white;
     border-top-left-radius: 25px;
     border-bottom-left-radius:  25px;
     margin-left: calc(256px - 100vw);
@@ -15,6 +15,10 @@
 .my-journey-gcs{
     margin: 30px 20px;
     padding: 0;
+}
+.my-journey-heading{
+    font-size: 25px;
+    font-weight: 600;
 }
 @media screen and (max-width : 1024px) {
     .my-journey-section{

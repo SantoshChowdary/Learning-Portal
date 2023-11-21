@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-css";
-import "ace-builds/src-noconflict/theme-twilight";
+import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/ext-language_tools";
 
 import "./index.css"
@@ -24,7 +24,7 @@ const CSSCodeEditor = (props: any) => {
       name="css"
       className='css-web-editor'
       onChange={(value) => changeCssCode(value)}
-      fontSize={15}
+      fontSize={14.5}
       value={defaultCssCode}
       showPrintMargin={false}
       showGutter={true}
@@ -35,7 +35,6 @@ const CSSCodeEditor = (props: any) => {
       enableLiveAutocompletion: true,
       enableSnippets: true,
       showLineNumbers: true,
-      tabSize: 2,
       }}/>
   )
 }

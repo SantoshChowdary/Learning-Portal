@@ -6,8 +6,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
     cursor: e-resize;
+    z-index: 99;
 }
 .window-resizer span{
     color: white;

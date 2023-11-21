@@ -1,47 +1,56 @@
-import React, { useRef} from 'react'
+import React, {useRef} from 'react'
 import "./index.css"
 
 export const WidthResizer = () => {
-    const resizerRef = useRef<HTMLDivElement>(null);
+    const resizerRef : any = useRef(null);
 
-    let isMouseDown = false;
+      setTimeout(() => {
 
-    const handleMouseDown = (e: any) => {
+      
+      // const prevSib: HTMLDivElement = resizerRef.current.previousSiblingElement;
+      const resizer : any = document.getElementById("window-resizer");
+      const prevSib : any = document.getElementById("web-code-editor");
+      const nextSib : any = document.getElementById("web-output-display");
+      // console.log(prevSib?.getBoundingClientRect())
+      const prevSiblingWidth = prevSib?.style.width;
+      const nextWidth = nextSib?.style.width;
 
-      const windowResizerId :any = document.getElementById("window-resizer");
-      const prevSiblingId : any = windowResizerId.previousElementSibling;
-      const nextSiblingId : any = windowResizerId.nextElementSibling;
+      let isDraggable = false;
+      let x : any = 0;
 
-      const prevSiblingWidth = prevSiblingId.getBoundingClientRect().width;
-      const nextSiblingWidth = nextSiblingId.getBoundingClientRect().width;
-      // console.log(nextSiblingWidth)
+      resizer.addEventListener("mousedown", (e : MouseEvent)=> {
+          isDraggable = true;
+          x = e.clientX;
+      });
 
-      isMouseDown = true;
-      if (isMouseDown){
-        prevSiblingId.addEventListener("mouseup", (e1 : any) => {
-          let d = e.clientX - e1.clientX;
-          // console.log(d)
-          prevSiblingId.style.width = prevSiblingWidth - d + "px";
-          nextSiblingId.style.width = nextSiblingWidth + d + "px";
-        });
+      prevSib.addEventListener("mousemove", (e: MouseEvent) => {
+        console.log(e.target)
+        if(isDraggable){
+          prevSib.style.width = prevSiblingWidth - x + e.clientX + "px";
+          nextSib.style.width = `calc(100% - ${prevSib.style.width})`;
+        }
+      })
 
-        nextSiblingId.addEventListener("mouseup", (e2 : any) => {
-          let f = e2.clientX - e.clientX;
-          console.log("e2", e2)
-          prevSiblingId.style.width = prevSiblingWidth + f + "px";
-          nextSiblingId.style.width = nextSiblingWidth - f + "px";
-        });
-      }
-      isMouseDown = false
-    }
+      prevSib.addEventListener("mouseup", ()=>{
+        isDraggable = false;
+      });
+      resizer.addEventListener("mouseup", ()=>{
+        isDraggable = false;
+      });
+      document.removeEventListener("mousedown", ()=> {})
+    }, 1000)
+
+
+      
+
 
 
   return (
-    <div className='window-resizer' id="window-resizer" ref={resizerRef} onMouseDown={(e) => handleMouseDown(e)}>
+    <div className='window-resizer' id="window-resizer" ref={resizerRef}>
         <div>
-        <span>.</span><br />
-        <span>.</span><br />
-        <span>.</span>
+          <span>.</span><br />
+          <span>.</span><br />
+          <span>.</span>
         </div>
     </div>
   )

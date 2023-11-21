@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuid } from 'uuid';
 import { updateSelectedDate } from '../../../../store/slices/scheduleSlice';
 import { useDispatch } from 'react-redux';
 import CompletionCircle from '../../../../utilities/completionCircle';
@@ -8,8 +8,8 @@ import './index.css'
 
 
 const generateDates = () => {
-    const currentDate = new Date("08-10-2023");
-    const dateArray = [];
+    const currentDate: Date = new Date("08-10-2023");
+    const dateArray : Date[] = [];
     for (let i = 0; i < 1000; i++) {
       dateArray.push(new Date(currentDate));
       currentDate.setDate(currentDate.getDate() + 1);
@@ -19,8 +19,8 @@ const generateDates = () => {
 
 
 const HorizontalCalendar = () => {
-  const [dates, setDates] = useState(generateDates())
-  const [selectedDate, setSelectedDate] = useState( new Date() )
+  const [dates, setDates] = useState<Date[]>(generateDates())
+  const [selectedDate, setSelectedDate] = useState<Date>( new Date() )
   const [transform, setTransform] = useState(0) 
   const dateRef: any = useRef(null)
   const dispatch = useDispatch()
@@ -42,11 +42,11 @@ const HorizontalCalendar = () => {
   // }
 
 
-  const handleLeftArrowClick = () => {
+  const handleLeftArrowClick = (): void => {
     setTransform(transform + 200)
   };
 
-  const handleRightArrowClick = () => {
+  const handleRightArrowClick = (): void => {
     setTransform(transform - 200)
   };
 
@@ -71,7 +71,7 @@ const HorizontalCalendar = () => {
         <div className="calendar-container" style={{transform : `translate3d(${transform}px, 0px, 0px )`}}>
           {dates.map((date :any, index:number) => (
             <button
-              key={uuidv4()}
+              key={uuid()}
               id={index.toString()}
               className="day"
               ref={dateRef}

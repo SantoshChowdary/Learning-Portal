@@ -2,8 +2,11 @@ import React, {useState} from 'react'
 
 import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-javascript";
-import "ace-builds/src-noconflict/theme-twilight";
+import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/ext-language_tools";
+import "ace-builds/esm-resolver";
+import "ace-builds/src-noconflict/ace";
+import "ace-builds/src-noconflict/mode-javascript";
 
 import "./index.css"
 
@@ -23,7 +26,7 @@ const JAVASCRIPTCodeEditor = (props : any) => {
       name="javascript"
       className='javascript-web-editor'
       onChange={(value) => changeJsCode(value)}
-      fontSize={15}
+      fontSize={14.7}
       value={defaultJSCode}
       showPrintMargin={false}
       showGutter={true}
@@ -34,7 +37,6 @@ const JAVASCRIPTCodeEditor = (props : any) => {
       enableLiveAutocompletion: true,
       enableSnippets: true,
       showLineNumbers: true,
-      tabSize: 2,
       }}/>
   )
 }

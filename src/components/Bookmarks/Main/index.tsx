@@ -4,10 +4,11 @@ import SideMenu from '../../SideMenu/Main'
 import { supabase } from '../../../supabase/supabase'
 import NoBookmarksPage from '../NoBookmarks'
 import Bookmark from '../Bookmark'
+import { bookmarkType } from '../../../types/bookmarks'
 import './index.css'
 
 const Bookmarks = () => {
-    const [bookmarksData, setBookmarksData] = useState<any>([])
+    const [bookmarksData, setBookmarksData] = useState<any | bookmarkType[]>([])
     const [isBookmarksLoaded, setBookmarksLoadingStatus] = useState(true)
 
     const getBookmarksData = async () => {
@@ -37,7 +38,7 @@ const Bookmarks = () => {
     <div className='bookmarks-main-section'>
         <SideMenu />
         <div className="bookmarks-section">
-            <h1>Bookmarks</h1>
+            <p className='bookmarks-heading'>Bookmarks</p>
             {
                 isBookmarksLoaded ? <Loader /> : (
                     <div>

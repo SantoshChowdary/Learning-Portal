@@ -13,7 +13,6 @@ export const ScheduleContent = () => {
   const [scheduleData, setScheduleData] = useState<any>([])
   const [isContentLoaded, setContentLoadingStatus] = useState(false)
 
-
   // eslint-disable-next-line
   const selectedDate = useSelector((state: any) => state.schedule.selectedDate)
   const randomSchedule = Math.floor(Math.random() * dummySchedule.length)
