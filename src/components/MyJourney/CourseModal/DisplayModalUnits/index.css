@@ -6,7 +6,7 @@
 .course-modal-topic{
     margin: 10px 0;
     border: 1px solid;
-    padding: 20px;
+    padding: 15px;
     box-shadow: none;
     box-sizing: border-box;
     border-color: #e2e8f0;
@@ -46,7 +46,19 @@
     margin-right: 25px;
 }
 .modal-unit-completion-circle svg{
-    width: 25px !important;
-    height: 25px !important;
+    width: 23px !important;
+    height: 23px !important;
     padding-left: 5px;
+}
+.my-journey-modal-date{
+    font-size: 10px;
+    color: rgb(142, 149, 157);
+    margin: 8px 0px 0 0;
+}
+.modal-unit-type-tag{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.67;
+    color: rgb(15, 118, 110);
+    margin-top: 5px;
 }

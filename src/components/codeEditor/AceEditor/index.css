@@ -6,6 +6,9 @@
     display: flex;
 
 }
+.react-editor-select{
+    width: 150px;
+}
 .run-button{
     margin : 0 10px;
     width: 80px;

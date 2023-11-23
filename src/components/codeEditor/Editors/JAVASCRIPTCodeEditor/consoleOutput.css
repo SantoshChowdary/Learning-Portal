@@ -6,11 +6,17 @@
 }
 .js-code-editor{
     max-width: 70vw;
-    width: 70vw;
+    width: 60vw;
     min-width: 30vw;
     height: inherit;
 }
-.console-output{
-    /* max-width: 70vw; */
+.console-output-main{
+    max-width: 70vw;
+    width: 40vw;
     min-width: 30vw;
+}
+.console-output{
+    background-color: rgb(40, 42, 54);
+    width: 100%;
+    height: calc(100vh - 110px);
 }

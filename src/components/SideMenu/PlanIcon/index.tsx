@@ -45,6 +45,7 @@ const EnrollPlanIcon = (props : any) => {
                 <linearGradient id="___SVG_ID__0__17___" x1="9.354" x2="10.561" y1="-0.815" y2="22.42" gradientUnits="userSpaceOnUse"><stop stopColor="#00C6FF"></stop><stop offset="1" stopColor="#0072FF"></stop></linearGradient>
             </defs>
         </svg>
+        {/* <img src="https://supabase.com/dashboard/img/supabase-logo.svg" alt="logo" width="208" height="51"  /> */}
 
     {/* <svg xmlns="http://www.w3.org/2000/svg" width="100px" height="100px" viewBox="0 0 192.756 192.756">
         <g fill-rule="evenodd" clipRule="evenodd"><path fill="transparent" d="M0 0h192.756v192.756H0V0z"/>

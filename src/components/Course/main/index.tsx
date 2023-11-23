@@ -3,7 +3,7 @@ import Header from '../../Header/main'
 import { supabase } from '../../../supabase/supabase';
 import { AiOutlineDoubleLeft, AiOutlineToTop } from "react-icons/ai";
 import CompletionCircle from '../../../utilities/completionCircle';
-import { AiFillCaretRight, AiOutlineSend } from "react-icons/ai";
+import { AiFillCaretRight, AiOutlineSend, AiOutlineFieldTime  } from "react-icons/ai";
 import Loader from '../../../utilities/loader/loader';
 import { useHistory } from 'react-router-dom';
 import "./index.css"
@@ -95,7 +95,11 @@ const CourseSection = () => {
                                         <div className="course-topic-3">
                                             <div className='course-resource-completion-circle'>
                                             </div>
-                                            <p className='course-topic-name'>{topic.topic_name}</p>
+                                            <div>
+                                                <p className='course-topic-name'>{topic.topic_name}</p>
+                                                {/* <p><AiOutlineFieldTime /> 30 Min</p> */}
+                                            </div>
+                                            
                                         </div>
                                         {/* {
                                             <CompletionCircle availability_status={topic.is_topic_locked ? "LOCKED" : ""} completion_percentage={0} />

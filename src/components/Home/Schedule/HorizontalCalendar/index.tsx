@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 import { v4 as uuid } from 'uuid';
 import { updateSelectedDate } from '../../../../store/slices/scheduleSlice';
@@ -24,6 +24,7 @@ const HorizontalCalendar = () => {
   const [transform, setTransform] = useState(0) 
   const dateRef: any = useRef(null)
   const dispatch = useDispatch()
+  // console.log(selectedDate)
 
   // const generateFutureDate = () => {
   //   if ((dates[dates.length -1].getFullYear() < 2010) || dates[dates.length -1].getFullYear() >= 2030){
@@ -62,6 +63,17 @@ const HorizontalCalendar = () => {
     })
   };
 
+  const getDateFormat = (date : Date) => {
+      const day = date.getDate()+1;
+      const month = date.getMonth();
+      const year = date.getFullYear();
+      return day + "-" + month + "-" + year
+  }
+
+  useEffect(()=>{
+    handleDayClick(selectedDate, dates.findIndex(item => getDateFormat(item) === getDateFormat(selectedDate) ));
+  })
+
   
 
   return (
@@ -79,7 +91,8 @@ const HorizontalCalendar = () => {
               disabled={date.getDay() === 0}
             > 
               <div className="day-name">{date.toLocaleDateString('en-US', { weekday: 'short' })}</div>
-              <div className={`date ${date === selectedDate ? 'selected' : ''}`}>
+
+              <div className={`date ${getDateFormat(date) === getDateFormat(selectedDate) ? 'selected' : ''}`}>
                   <p>{date.getDate()}</p>
                   {
                     (date.getDay()>0) &&

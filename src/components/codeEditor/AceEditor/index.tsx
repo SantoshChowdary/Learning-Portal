@@ -6,14 +6,14 @@ import Select from 'react-select'
 import "./index.css"
 
 export const ReactAceEditor = () => {
-  
+  const [enableRunButton, setRunButtonVisibleStatus] = useState(true);
 
   const options = [
     {
-      value : "Web", label : "Web", id : "WEB"
+      value : "Web", label : "Web", id : "WEB", enableRunButton : false
     },
     {
-      value : "JAVASCRIPT", label : "JAVASCRIPT", id : "JAVASCRIPT"
+      value : "JAVASCRIPT", label : "JAVASCRIPT", id : "JAVASCRIPT", enableRunButton : true
     }
   ]
 
@@ -43,6 +43,7 @@ export const ReactAceEditor = () => {
             options={options}
             defaultValue={options[0]} 
             isSearchable={false}
+            className='react-editor-select'
             styles={{
               menu : (provided, state) => ({
                 ...provided,
@@ -51,7 +52,7 @@ export const ReactAceEditor = () => {
               })
             }}
           />
-          <button className='run-button' onClick={()=>console.log("clicked")}>
+          <button style={{display : enableRunButton ? "block" : "none"}} className='run-button' onClick={()=>console.log("clicked")}>
             Run
           </button>
         </div>
