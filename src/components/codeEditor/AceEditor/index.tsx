@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import Header from '../../Header/main'
 import WebCodeEditor from '../WebEditor'
 import JSConsoleOutput from '../Editors/JAVASCRIPTCodeEditor/consoleOutput'
+import PythonOutput from '../Editors/PythonCodeEditor/mian'
 import Select from 'react-select'
 import "./index.css"
 
@@ -14,6 +15,9 @@ export const ReactAceEditor = () => {
     },
     {
       value : "JAVASCRIPT", label : "JAVASCRIPT", id : "JAVASCRIPT", enableRunButton : true
+    },
+    {
+      value : "Python", label : "Python", id : "PYTHON", enableRunButton : true 
     }
   ]
 
@@ -25,6 +29,8 @@ export const ReactAceEditor = () => {
         return <WebCodeEditor />
       case options[1].id:
         return <JSConsoleOutput />
+      case options[2].id:
+        return <PythonOutput />
       default:
         return <WebCodeEditor />
     }
@@ -52,9 +58,9 @@ export const ReactAceEditor = () => {
               })
             }}
           />
-          <button style={{display : enableRunButton ? "block" : "none"}} className='run-button' onClick={()=>console.log("clicked")}>
+          {/* <button style={{display : enableRunButton ? "block" : "none"}} className='run-button' onClick={()=>console.log("clicked")}>
             Run
-          </button>
+          </button> */}
         </div>
     </div>
   )

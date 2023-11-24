@@ -19,6 +19,7 @@ const JSConsoleOutput = () => {
   const executeCode = () => {
     try{
       setLogs([])
+      // eslint-disable-next-line no-eval
       eval(javascriptCode)
     } catch (error){
       console.log(error)
@@ -28,13 +29,13 @@ const JSConsoleOutput = () => {
   return (
     <div className="react-ace-js-editor">
       <div className="js-code-editor">
-        <JAVASCRIPTCodeEditor  onChangeJsCode={setJavascriptCode} code={javascriptCode}  />
+        <JAVASCRIPTCodeEditor onChangeJsCode={setJavascriptCode} code={javascriptCode}  />
       </div>
       <div className='console-output-main'>
-      <button onClick={executeCode}>Execute Code</button>
-        <div className='console-output'>
-          <Console logs={logs} variant="dark" styles={{}} />
-        </div>
+      <div className='console-output'>
+        <button className='js-run-button' onClick={executeCode}>Execute Code</button>
+        <Console logs={logs} variant="dark" styles={{}} />
+      </div>
       </div>
     </div>
   )

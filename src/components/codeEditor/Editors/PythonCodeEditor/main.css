@@ -1,28 +1,26 @@
-.react-ace-js-editor{
+.python-ace-editor-main{
     height: calc(100vh - 80px);
     margin-top: 80px;
     width: 100vw;
     display: flex;
 }
-.js-code-editor{
+.python-editor-section{
     max-width: 70vw;
     width: 60vw;
     min-width: 30vw;
     height: inherit;
 }
-.console-output-main{
+.python-output-main{
     max-width: 70vw;
     width: 40vw;
     min-width: 30vw;
+    background-color: rgb(53, 52, 52);
+    color: white;
+    padding: 10px;
 }
-.console-output{
-    background-color: rgb(40, 42, 54);
-    width: 100%;
-    height: calc(100vh - 81px);
-    padding: 20px 0 0 10px;
-}
-.js-run-button{
+.python-run-button{
     padding : 10px;
+    margin-bottom: 20px;
     width: 130px;
     font-size: 15px;
     font-weight: 500;
@@ -31,6 +29,6 @@
     border-radius: 5px;
     color: white;
 }
-.js-run-button:active{
+.python-run-button:active{
     background-color: rgb(137, 174, 217);
 }
