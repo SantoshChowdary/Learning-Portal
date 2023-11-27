@@ -4,7 +4,7 @@ import SingleTab from './SingleTab'
 
 import './index.css'
 
-const localSavedTabsList : any  = localStorage.getItem("mainHomeTabs")
+const localSavedTabsList : any  = localStorage.getItem("mainHomeTabs");
 
 const MainHomeTabs = (props : any) => {
     const [tabsList, setTabsList] = useState<any>(JSON.parse(localSavedTabsList) || [])

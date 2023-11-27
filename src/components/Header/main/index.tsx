@@ -3,10 +3,15 @@ import "./index.css"
 import { Link } from 'react-router-dom'
 
 const Header = () => {
+
+  const setLocalTabNull = () => {
+    localStorage.setItem("activeTabId", "");
+  }
+
   return (
     <div className="header-section">
         <div>
-          <Link to="/">
+          <Link to="/" onClick={setLocalTabNull}>
             <img src="https://media-content.ccbp.in/website/ccbp_website_logos/nxtwave_header_logo.png" alt="nxtwave-header-logo" className="nxtwave-header-logo" />
           </Link>
         </div>

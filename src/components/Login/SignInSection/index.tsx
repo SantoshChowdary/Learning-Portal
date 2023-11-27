@@ -33,7 +33,8 @@ const SignIn = (props: any) => {
             } else if (apiCall.data?.length !== 0 && checkValidUserInDB.data?.length !== 0){
                 dispatch(updateUserLoggedStatus(true))
                 dispatch(addUserToDB(apiCall.data))
-                history.replace("/")
+                history.replace("/");
+                localStorage.setItem("activeTabId", "");
             }
         }
 

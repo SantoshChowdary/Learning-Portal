@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 100vw;
+    width: 100vw;
     height: 80px;
     padding: 15px 5%;
     box-shadow: rgba(31, 45, 61, 0.15) 0px 0px 2px 2px;
@@ -22,5 +22,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-width: 15vw;
+    min-width: 20vw;
+    max-width: 300px;
+}
+@media screen and (max-width: 768px) {
+    .header-left-div{
+        min-width: 40vw;
+    }
+    .header-section{
+        padding: 15px;
+    }
 }
