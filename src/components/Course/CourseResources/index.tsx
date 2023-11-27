@@ -4,7 +4,7 @@ import { supabase } from '../../../supabase/supabase'
 import VideoSession from '../UnitTypes/Session';
 import CheatSheet from '../UnitTypes/CheatSheet';
 import Exam from '../UnitTypes/Exam';
-import MCQPractice from '../UnitTypes/Practice';
+import MCQPractice from '../UnitTypes/Practice/main';
 import CodingPracticeUnit from '../UnitTypes/CodingPractice';
 
 import './index.css'

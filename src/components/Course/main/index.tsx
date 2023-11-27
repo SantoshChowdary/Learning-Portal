@@ -8,6 +8,7 @@ import Loader from '../../../utilities/loader/loader';
 import { useHistory } from 'react-router-dom';
 import "./index.css"
 import CourseUnitResources from '../CourseResources';
+import { convertIntoReadableTime } from '../../../utilities/convertToTime';
 
 const localTopicId = localStorage.getItem("localTopicID");
 const localUnitId = localStorage.getItem("localUnitID");
@@ -97,7 +98,10 @@ const CourseSection = () => {
                                             </div>
                                             <div>
                                                 <p className='course-topic-name'>{topic.topic_name}</p>
-                                                {/* <p><AiOutlineFieldTime /> 30 Min</p> */}
+                                                <p className='resource-duration'>
+                                                    <AiOutlineFieldTime />
+                                                    <span>{convertIntoReadableTime(topic.topic_duration_in_sec)}</span>
+                                                </p>
                                             </div>
                                             
                                         </div>
@@ -115,7 +119,13 @@ const CourseSection = () => {
                                                     <div className='course-unit-completion-circle'>
                                                         <CompletionCircle availability_status={unitItem.is_unit_locked ? "LOCKED" : ""} completion_percentage={unitItem.completion_status === "COMPLETED" ? 100 : 10} />
                                                     </div>
-                                                    <span>{unitItem.unit_name}</span>
+                                                    <div>
+                                                        <p>{unitItem.unit_name}</p>
+                                                        <p className='resource-duration'>
+                                                            <AiOutlineFieldTime />
+                                                            <span>{convertIntoReadableTime(unitItem.unit_duration_in_sec)}</span>
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             ))
                                             }
@@ -134,7 +144,7 @@ const CourseSection = () => {
                             {
                                 shouldDisplaySideMenu ? null : <AiOutlineSend className="display-side-menu-icon" style={{display : shouldDisplaySideMenu ? "none" : "block"}} onClick={()=>setDisplaySideMenuStatus(!shouldDisplaySideMenu)}  />
                             }
-                            <p> {activeResourceNames.topicName} - {activeResourceNames.unitName}</p>
+                            {activeResourceNames.topicName !== "" && <p> {activeResourceNames.topicName} - {activeResourceNames.unitName}</p>}
                         </div>
                         <CourseUnitResources currentUnit={currentUnit} />
                     </div>

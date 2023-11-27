@@ -31,9 +31,6 @@
 .selected-web-tab{
     background-color: rgb(40, 43, 57);
 }
-.web-code-editor span{
-    /* font-size: 14px; */
-}
 .react-ace-web-editor{
     height: 100%;
     width: 100%;

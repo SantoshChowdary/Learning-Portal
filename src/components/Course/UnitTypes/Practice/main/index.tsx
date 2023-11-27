@@ -1,8 +1,13 @@
 import React from 'react'
+import {
+  MainMcq
+} from '../StyledComponents/styled'
 
 export const MCQPractice = (props: any) => {
   return (
-    <div>MCQPractice</div>
+    <MainMcq>
+      <div>hello</div>
+    </MainMcq>
   )
 }
 

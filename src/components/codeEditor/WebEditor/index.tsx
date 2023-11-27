@@ -4,6 +4,11 @@ import HTMLCodeEditor from '../Editors/HTMLCodeEditor';
 import CSSCodeEditor from '../Editors/CSSCodeEditor';
 import JAVASCRIPTCodeEditor from '../Editors/JAVASCRIPTCodeEditor';
 import WidthResizer from '../../../utilities/WidthResizer';
+import {
+    ReflexContainer,
+    ReflexSplitter,
+    ReflexElement
+  } from 'react-reflex'
 
 
 import "ace-builds/esm-resolver";
@@ -17,7 +22,6 @@ import "ace-builds/src-noconflict/theme-monokai";
 import "ace-builds/src-noconflict/ext-language_tools";
 import 'ace-builds/webpack-resolver'
 import "./index.css"
-// import SplitPane from 'react-split-pane';
 
 const WebCodeEditor = () => {
     const HTML = "HTML";
@@ -61,31 +65,31 @@ const WebCodeEditor = () => {
    
     return (
             
-                <div className="main-web-code-editor" id="main-web-code-editor">
-                    <div  className="web-code-editor web-overlay" id="web-code-editor">
-                        <div className="web-code-editor-header">
-                            <div className="web-code-languages-div">
-                                <p className={`web-editor-tab ${currentCodeEditor===HTML ? "selected-web-tab" : ""}`} onClick={() => setCurrentCodeEditor(HTML)}><DiHtml5 /> <span>HTML</span></p>
-                                <p className={`web-editor-tab ${currentCodeEditor===CSS ? "selected-web-tab" : ""}`} onClick={() => setCurrentCodeEditor(CSS)}><DiCss3 /> <span>CSS</span></p>
-                                <p className={`web-editor-tab ${currentCodeEditor===JAVASCRIPT ? "selected-web-tab" : ""}`} onClick={() => setCurrentCodeEditor(JAVASCRIPT)}><DiJavascript1 /> <span>JAVASCRIPT</span></p>
-                                {/* <button onClick={changeIframeCode}>Run</button> */}
-                            </div>
-                            <div className='code-editor-operations-div'>
-
-                            </div>
-                        </div>
-                        <div className="react-ace-web-editor">
-                            {currentCodeEditor===HTML && <HTMLCodeEditor onChangeHtmlCode={setHtmlCode} code={htmlCode} />}
-                            {currentCodeEditor===CSS && <CSSCodeEditor onChangeCssCode={setCssCode} code={cssCode} />}
-                            {currentCodeEditor===JAVASCRIPT && <JAVASCRIPTCodeEditor onChangeJsCode={setJavascriptCode} code={javascriptCode} />}    
-                        </div>
-                        
+        <div className="main-web-code-editor">
+            <div  className="web-code-editor web-overlay">
+                <div className="web-code-editor-header">
+                    <div className="web-code-languages-div">
+                        <p className={`web-editor-tab ${currentCodeEditor===HTML ? "selected-web-tab" : ""}`} onClick={() => setCurrentCodeEditor(HTML)}><DiHtml5 /> <span>HTML</span></p>
+                        <p className={`web-editor-tab ${currentCodeEditor===CSS ? "selected-web-tab" : ""}`} onClick={() => setCurrentCodeEditor(CSS)}><DiCss3 /> <span>CSS</span></p>
+                        <p className={`web-editor-tab ${currentCodeEditor===JAVASCRIPT ? "selected-web-tab" : ""}`} onClick={() => setCurrentCodeEditor(JAVASCRIPT)}><DiJavascript1 /> <span>JAVASCRIPT</span></p>
+                        {/* <button onClick={changeIframeCode}>Run</button> */}
                     </div>
-                    {/* <WidthResizer /> */}
-                    <div  className='web-output-display' id="web-output-display">
-                        <iframe id="web-out-iframe" title="web-out-iframe" srcDoc={iFrameCode} width="99%" height="99%" />
+                    <div className='code-editor-operations-div'>
+
                     </div>
                 </div>
+                <div className="react-ace-web-editor">
+                    {currentCodeEditor===HTML && <HTMLCodeEditor onChangeHtmlCode={setHtmlCode} code={htmlCode} />}
+                    {currentCodeEditor===CSS && <CSSCodeEditor onChangeCssCode={setCssCode} code={cssCode} />}
+                    {currentCodeEditor===JAVASCRIPT && <JAVASCRIPTCodeEditor onChangeJsCode={setJavascriptCode} code={javascriptCode} />}    
+                </div>
+                
+            </div>
+            {/* <WidthResizer /> */}
+            <div className='web-output-display' id="web-output-display">
+                <iframe id="web-out-iframe" title="web-out-iframe" srcDoc={iFrameCode} width="99%" height="99%" />
+            </div>
+        </div>
             
     )
 }
