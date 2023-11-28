@@ -1,7 +1,9 @@
 
 # Learning Portal App
 
+
 A Learning Portal Application where users can sign up, login and learn about different technologies and can watch sessions, practice those concepts in in-built code playground. It is a Simplified replica from nxtwave.
+
 
 
 ## Features
@@ -10,6 +12,7 @@ A Learning Portal Application where users can sign up, login and learn about dif
 - User Journey
 - In-build code editor
 - Bookmarks
+
 ## Tech Stack
 
 **Client:** React, Redux toolkit, Styled Components

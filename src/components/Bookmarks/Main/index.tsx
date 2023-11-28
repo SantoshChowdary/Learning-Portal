@@ -5,6 +5,7 @@ import { supabase } from '../../../supabase/supabase'
 import NoBookmarksPage from '../NoBookmarks'
 import Bookmark from '../Bookmark'
 import { bookmarkType } from '../../../types/bookmarks'
+import MobileViewSideMenu from '../../SideMenu/MobileView'
 import './index.css'
 
 const Bookmarks = () => {
@@ -37,6 +38,9 @@ const Bookmarks = () => {
   return (
     <div className='bookmarks-main-section'>
         <SideMenu />
+        <div className="mobile-hamburger-menu">
+          <MobileViewSideMenu />
+        </div>
         <div className="bookmarks-section">
             <p className='bookmarks-heading'>Bookmarks</p>
             {

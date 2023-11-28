@@ -3,6 +3,7 @@ import SideMenu from '../../SideMenu/Main'
 import Loader from '../../../utilities/loader/loader'
 import { supabase } from '../../../supabase/supabase'
 import CourseCategory from '../CourseCategory'
+import MobileViewSideMenu from '../../SideMenu/MobileView'
 import './index.css'
 
 const OtherCourses = () => {
@@ -41,6 +42,9 @@ const OtherCourses = () => {
   return (
     <div className="other-courses-tab">
         <SideMenu />
+        <div className="mobile-hamburger-menu">
+          <MobileViewSideMenu />
+        </div>
         <div className="other-courses-section">
             {
                 isOtherCoursesLoading ? <Loader /> : (

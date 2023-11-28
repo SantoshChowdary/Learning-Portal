@@ -3,20 +3,20 @@ import EnrollPlanIcon from '../PlanIcon'
 import MainHomeTabs from '../TabsSection'
 import ProfileSection from '../SideProfileSection'
 
-
 import "./index.css"
 
 const SideMenu = (props : any) => {
-  
+  console.log(window.innerWidth)
 
   return (
-    <div className="main-homepage-section">
-        <div className='main-home-side-section'>
-            <EnrollPlanIcon />
-            <MainHomeTabs />
-            <ProfileSection />
-        </div>
-    </div>
+
+      <div className="main-homepage-section">
+          <div className='main-home-side-section'>
+              <EnrollPlanIcon />
+              <MainHomeTabs />
+              <ProfileSection />
+          </div>
+      </div>
   )
 }
 
