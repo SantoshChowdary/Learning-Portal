@@ -20,3 +20,10 @@
     font-size: 25px;
     font-weight: 600;
 }
+@media screen and (max-width: 692px){
+    .bookmarks-section{
+        width: 100vw;
+        margin-left: -100vw;
+        border-radius: 0;
+    }
+}

@@ -1,0 +1,24 @@
+.mobile-side-modal{
+    display: none;
+    background-color: #0F172A;
+    border-radius: 10px;
+}
+.mobile-sidebar-hamburger{
+    position: absolute;
+}
+.hamburger-close-button{
+    margin: 10px;
+    background: inherit;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+@media screen and (max-width : 692px) {
+    .mobile-side-modal{
+        display: block;
+        position: absolute;
+        z-index: 1000;
+        right: 0;
+    }
+}

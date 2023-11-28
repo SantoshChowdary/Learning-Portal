@@ -3,6 +3,7 @@ import SideMenu from '../../SideMenu/Main'
 import { supabase } from '../../../supabase/supabase'
 import DisplayGCs from '../DisplayGcs'
 import Loader from '../../../utilities/loader/loader'
+import MobileViewSideMenu from '../../SideMenu/MobileView'
 
 import './index.css'
 
@@ -37,6 +38,9 @@ const MyJourney = (props : any) => {
   return (
     <div className="my-journey-main-section">
         <SideMenu />
+        <div className="mobile-hamburger-menu">
+          <MobileViewSideMenu />
+        </div>
         <div className="my-journey-section">
           {
             isLoadingMyJourneyData ? <Loader /> : 

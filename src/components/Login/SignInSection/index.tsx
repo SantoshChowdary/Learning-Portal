@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateUserLoggedStatus, addUserToDB } from '../../../store/slices/userSlice';
 import './main.css';
 import { PhoneNumberValidator } from '../../../utilities/phoneNumberValidator';
-import OfflineWarning from '../../../utilities/offlineWarning';
+import OfflineWarning from '../../../utilities/offlineWarning'; 
 
 
 const SignIn = (props: any) => {

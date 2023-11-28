@@ -21,6 +21,12 @@
     overflow: hidden;
     padding: 20px;
 }
+.mobile-hamburger-menu{
+    position: absolute;
+    right: 50px;
+    top: 20px;
+    font-size: 30px;
+}
 @media screen and (max-width : 1023px) {
     .home-page-profile-section{
         display: none;
