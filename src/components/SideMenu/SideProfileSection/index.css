@@ -34,6 +34,12 @@
     left: 210px;
     bottom: 10px;
 }
+@media screen and (max-width : 692px){
+    .profile-modal{
+        left: -40px;
+        bottom : -150px;
+    }
+}
 .profile-modal li{
     display: flex;
     align-items: center;

@@ -6,7 +6,6 @@ import ProfileSection from '../SideProfileSection'
 import "./index.css"
 
 const SideMenu = (props : any) => {
-  console.log(window.innerWidth)
 
   return (
 

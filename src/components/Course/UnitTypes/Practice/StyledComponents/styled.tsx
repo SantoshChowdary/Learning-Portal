@@ -2,8 +2,8 @@ import {styled, css} from "styled-components"
 
 export const MainMcq = styled.div`
     width : inherit;
-    min-height : calc(100vh - 100px);
-    background-color : #edf9fa;
+    min-height : calc(100vh - 90px);
+    // background-color : #edf9fa;
 `
 export const InstructionsDiv = styled.div`
     width : 80%;
@@ -15,22 +15,26 @@ export const RestartPracticeButton = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 186px;
+    width: 186px;
     height: 36px;
     border-radius: 4px;
     padding: 6px 20px;
     background-color: rgb(204, 248, 255);
     margin-right: 20px;
+    color: rgb(0, 200, 255);
+    font-weight: 600;
 `
 export const ResumePracticeButton = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 186px;
+    width: 186px;
     height: 36px;
     border-radius: 4px;
     box-shadow: rgba(239, 199, 169, 0.5) 0px 0px 5px 0px;
     background-color: rgb(255, 131, 35);
+    color: white;
+    font-weight: 600;
 `
 export const McqOptionLabel = styled.label`
     margin-left : 10px;

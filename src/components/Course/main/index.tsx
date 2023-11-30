@@ -72,6 +72,13 @@ const CourseSection = () => {
         setDisplaySideMenuStatus(!shouldDisplaySideMenu)
       }
 
+    //   useEffect(()=>{
+    //     if(window.innerHeight <= 1000 && activeUnitId !== null){
+    //         setDisplaySideMenuStatus(!shouldDisplaySideMenu)
+    //     }
+    //   // eslint-disable-next-line react-hooks/exhaustive-deps
+    //   }, [window.innerWidth])
+
       const sideMenuDisplay = shouldDisplaySideMenu ? "" : "hide-side-menu";
       const currentUnit = mainUnitsData.find((item : any)=> item.unit_id===activeUnitId)
 

@@ -1,14 +1,16 @@
 .sign-in-section{
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     background-color: rgb(249, 251, 254);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .sign-in-section-1{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 70%;
 }
 .nxtwave-logo{
     max-width: 90px;

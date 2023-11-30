@@ -13,6 +13,13 @@
     padding-left: 40px;
 }
 .player-container{
-    width: 70vw;
+    width: 80%;
     height: 70vh;
+}
+
+@media screen and (max-width : 1000px) {
+    .player-container {
+        /* width: inherit; */
+    }
+   
 }

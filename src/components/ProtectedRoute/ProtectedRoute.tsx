@@ -1,13 +1,22 @@
+import { useState } from "react";
 import { Redirect, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import OfflineWarning from "../../utilities/offlineWarning";
 
 
 const ProtectedRoute = ( props : any ) => {
+    const [isOnline, setOnlineStatus] = useState(navigator.onLine)
+    
     const isUserAuthenticated = useSelector((state:any) => state.user.isUserLoggedIn);
-    const isOnLine = navigator.onLine;
+    
+    if (!isOnline){
+        setInterval(()=>{
+            setOnlineStatus(navigator.onLine)
+        }, 1000)
+    }
+    
 
-    if(!isOnLine) {
+    if(!isOnline) {
         return <OfflineWarning />
       }
     
