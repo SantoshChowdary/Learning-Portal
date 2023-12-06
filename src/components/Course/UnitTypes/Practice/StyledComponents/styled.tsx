@@ -23,6 +23,7 @@ export const RestartPracticeButton = styled.div`
     margin-right: 20px;
     color: rgb(0, 200, 255);
     font-weight: 600;
+    cursor: pointer;
 `
 export const ResumePracticeButton = styled.div`
     display: flex;
@@ -35,6 +36,7 @@ export const ResumePracticeButton = styled.div`
     background-color: rgb(255, 131, 35);
     color: white;
     font-weight: 600;
+    cursor: pointer;
 `
 export const McqOptionLabel = styled.label`
     margin-left : 10px;
