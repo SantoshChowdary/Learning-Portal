@@ -153,7 +153,7 @@ const CourseSection = () => {
                             }
                             {activeResourceNames.topicName !== "" && <p> {activeResourceNames.topicName} - {activeResourceNames.unitName}</p>}
                         </div>
-                        <CourseUnitResources currentUnit={currentUnit} />
+                        <CourseUnitResources currentUnit={currentUnit} shouldDisplaySideMenu={shouldDisplaySideMenu} />
                     </div>
                 </div>
             </div>

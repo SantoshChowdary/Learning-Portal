@@ -3,19 +3,27 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
+    padding: 10px 20px;
 }
 .react-video-player{
-    width: 100%;
+    width: 80%;
     height: 100%;
-    align-self: center;
-    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .player-container{
-    width: 80%;
+    width: 100%;
+    
     height: 70vh;
+    position: relative;
+    padding-top: 56.25%;
 }
+.react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
 @media screen and (max-width : 1000px) {
     .player-container {

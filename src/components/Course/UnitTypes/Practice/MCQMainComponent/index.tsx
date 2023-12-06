@@ -28,7 +28,6 @@ export const MCQMainComponent = (props: any) => {
 
     const handleShowAnswer = () => {
         setIsAnswerShown(true);
-        
     }
 
 
