@@ -20,10 +20,12 @@ const CourseUnitResources = (props : any) => {
       return <CheatSheet unitDetails={currentUnit} />
     } else if (unitType === "PRACTICE"){
       return <MCQPractice unitDetails={currentUnit} />
-    } else if (unitType === "QUESTION_SET"){
-      return <CodingPracticeUnit unitDetails={currentUnit} />
-    } else if (unitType === "EXAM"){
-      return <Exam unitDetails={currentUnit} />
+    // } else if (unitType === "QUESTION_SET"){
+    //   return <CodingPracticeUnit unitDetails={currentUnit} />
+    // } else if (unitType === "EXAM"){
+    //   return <Exam unitDetails={currentUnit} />
+    } else {
+      return <VideoSession unitDetails={currentUnit} shouldDisplaySideMenu={shouldDisplaySideMenu} />
     }
   }
 

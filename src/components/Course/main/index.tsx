@@ -47,6 +47,12 @@ const CourseSection = () => {
         getUnitsData()
       }, [])
 
+      useEffect(()=>{
+        if(window.innerWidth <= 1000 && activeUnitId !== null){
+            setDisplaySideMenuStatus(!shouldDisplaySideMenu)
+        }
+      }, [window.innerWidth, activeUnitId])
+
       const setActiveTopicStatus = (topicId : string) => {
         if(topicId === activeTopicTab){
           setActiveTopicTab("")
