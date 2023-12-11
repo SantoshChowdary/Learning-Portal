@@ -47,6 +47,12 @@ const CourseSection = () => {
         getUnitsData()
       }, [])
 
+      useEffect(()=>{
+        if(window.innerWidth <= 1000 && activeUnitId !== null){
+            setDisplaySideMenuStatus(!shouldDisplaySideMenu)
+        }
+      }, [window.innerWidth, activeUnitId])
+
       const setActiveTopicStatus = (topicId : string) => {
         if(topicId === activeTopicTab){
           setActiveTopicTab("")
@@ -71,6 +77,13 @@ const CourseSection = () => {
       const setSideMenuDisplayStatus = () => {
         setDisplaySideMenuStatus(!shouldDisplaySideMenu)
       }
+
+    //   useEffect(()=>{
+    //     if(window.innerHeight <= 1000 && activeUnitId !== null){
+    //         setDisplaySideMenuStatus(!shouldDisplaySideMenu)
+    //     }
+    //   // eslint-disable-next-line react-hooks/exhaustive-deps
+    //   }, [window.innerWidth])
 
       const sideMenuDisplay = shouldDisplaySideMenu ? "" : "hide-side-menu";
       const currentUnit = mainUnitsData.find((item : any)=> item.unit_id===activeUnitId)
@@ -146,7 +159,7 @@ const CourseSection = () => {
                             }
                             {activeResourceNames.topicName !== "" && <p> {activeResourceNames.topicName} - {activeResourceNames.unitName}</p>}
                         </div>
-                        <CourseUnitResources currentUnit={currentUnit} />
+                        <CourseUnitResources currentUnit={currentUnit} shouldDisplaySideMenu={shouldDisplaySideMenu} />
                     </div>
                 </div>
             </div>

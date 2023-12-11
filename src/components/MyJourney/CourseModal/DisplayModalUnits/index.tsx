@@ -13,7 +13,6 @@ const MyJourneyCourseUnits = (courseId : any) => {
   const [activeTopicTab, setActiveTopicTab] = useState<string>("")
   const [isUnitsOpened, setUnitsDisplayStatus] = useState(false)
   const [isModalResourcesLoaded, setModalResourceLoadingStatus] = useState(true)
-  console.log(unitsData)
 
   const filteredUnitsData: any = unitsData.filter((unit: any) => unit.parent_id === activeTopicTab)
 

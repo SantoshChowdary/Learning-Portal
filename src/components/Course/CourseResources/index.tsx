@@ -10,20 +10,22 @@ import CodingPracticeUnit from '../UnitTypes/CodingPractice';
 import './index.css'
 
 const CourseUnitResources = (props : any) => {
-  const {currentUnit} = props
+  const {currentUnit, shouldDisplaySideMenu} = props
   const unitType = currentUnit?.unit_type
 
   const checkUnitType = () => {
     if (unitType === "LEARNING_SET"){
-      return <VideoSession unitDetails={currentUnit} />
+      return <VideoSession unitDetails={currentUnit} shouldDisplaySideMenu={shouldDisplaySideMenu} />
     } else if (unitType === "CHEAT_SHEET") {
       return <CheatSheet unitDetails={currentUnit} />
     } else if (unitType === "PRACTICE"){
       return <MCQPractice unitDetails={currentUnit} />
-    } else if (unitType === "QUESTION_SET"){
-      return <CodingPracticeUnit unitDetails={currentUnit} />
-    } else if (unitType === "EXAM"){
-      return <Exam unitDetails={currentUnit} />
+    // } else if (unitType === "QUESTION_SET"){
+    //   return <CodingPracticeUnit unitDetails={currentUnit} />
+    // } else if (unitType === "EXAM"){
+    //   return <Exam unitDetails={currentUnit} />
+    } else {
+      return <VideoSession unitDetails={currentUnit} shouldDisplaySideMenu={shouldDisplaySideMenu} />
     }
   }
 

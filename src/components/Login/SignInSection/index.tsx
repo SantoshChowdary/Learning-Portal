@@ -10,8 +10,8 @@ import OfflineWarning from '../../../utilities/offlineWarning';
 
 
 const SignIn = (props: any) => {
-  const [phoneNumber, setPhoneNumber] = useState<string>("9866021291");
-  const [password, setPassword] = useState<string>("santosh")
+  const [phoneNumber, setPhoneNumber] = useState<string>("9000000000");
+  const [password, setPassword] = useState<string>("testing")
   const [isLoading, setLoadingStatus] = useState<boolean>(false)
   const history = useHistory()
   const dispatch = useDispatch()

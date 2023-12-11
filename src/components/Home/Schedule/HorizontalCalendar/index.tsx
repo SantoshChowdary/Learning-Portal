@@ -72,7 +72,7 @@ const HorizontalCalendar = () => {
 
   useEffect(()=>{
     handleDayClick(selectedDate, dates.findIndex(item => getDateFormat(item) === getDateFormat(selectedDate) ));
-  })
+  }, [selectedDate])
 
   
 
